@@ -1,11 +1,11 @@
-module.exports = {
+const cfg = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Ayumi.tk - UI/UX Designer & Developer`,
+    author: `Ayumi Takahashi`,
+    description: `Hi, I\'m Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.`,
+    siteUrl: `https://ayumi.tk/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ayumitk__`,
     },
   },
   plugins: [
@@ -75,4 +75,16 @@ module.exports = {
       },
     },
   ],
+};
+
+if (process.env.CONTEXT !== "production") {
+  cfg.plugins.push({
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `drafts`,
+      path: `${__dirname}/content/drafts`
+    }
+  });
 }
+
+module.exports = cfg;
