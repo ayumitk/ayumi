@@ -45,6 +45,23 @@ const cfg = {
         ],
       },
     },
+    'gatsby-plugin-styled-components',
+    `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Montserrat',
+            variants: ['100', '200', '300', '500', '400', '600', '700', '800', '900'],
+          },
+          {
+            family: 'Libre Baskerville',
+            variants: ['400', '400i', '700'],
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
