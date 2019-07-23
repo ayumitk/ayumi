@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "JavaScriptで配列の中から、特定の要素を持つオブジェクトを探す"
 date: 2019-06-25T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/js-image.png
+featuredimage: /images/js-image.png
 description: 配列の中から何かを探し出す時のメソッドまとめ。
 
 tags:
@@ -31,11 +31,11 @@ const users = [
   { name: "Emma", age: 20 },
   { name: "Jake", age: 30 },
   { name: "Lily", age: 40 },
-  { name: "Harry", age: 20 }
-];
+  { name: "Harry", age: 20 },
+]
 
-const targetUser = users.find(friend => friend.age === 20);
-console.log(targetUser);
+const targetUser = users.find(friend => friend.age === 20)
+console.log(targetUser)
 
 // => { name: 'Emma', age: 20 },
 // Emma だけが返る、Harry は返らない。
@@ -55,11 +55,11 @@ const users = [
   { name: "Emma", age: 20 },
   { name: "Jake", age: 30 },
   { name: "Lily", age: 40 },
-  { name: "Harry", age: 20 }
-];
+  { name: "Harry", age: 20 },
+]
 
-const targetUser = users.filter(friend => friend.age === 20);
-console.log(targetUser);
+const targetUser = users.filter(friend => friend.age === 20)
+console.log(targetUser)
 
 // [
 //  { name: 'Emma',  age: 20 },
@@ -82,11 +82,11 @@ const users = [
   { name: "Emma", age: 20 },
   { name: "Jake", age: 30 },
   { name: "Lily", age: 40 },
-  { name: "Harry", age: 20 }
-];
+  { name: "Harry", age: 20 },
+]
 
-const index = users.findIndex(friend => friend.age === age);
-console.log(index);
+const index = users.findIndex(friend => friend.age === age)
+console.log(index)
 
 // => 0
 // Emma の index 0 だけが返る。Harry の index は返らない。
@@ -105,12 +105,12 @@ const users = [
   { name: "Emma", age: 20 },
   { name: "Jake", age: 30 },
   { name: "Lily", age: 40 },
-  { name: "Harry", age: 20 }
-];
+  { name: "Harry", age: 20 },
+]
 
-const existing = users.some(friend => friend.age === 20);
+const existing = users.some(friend => friend.age === 20)
 
-console.log(existing);
+console.log(existing)
 
 // => true
 ```
