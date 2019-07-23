@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../styles/StyledComponents';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const StyledHeader = styled.header`
   background:#FFF;
@@ -16,16 +17,27 @@ const Brand = styled(Link)`
   }
 `;
 
-class Header extends Component{
-  render(){
+const Header = () =>{
+
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
+
+  const { author } = data.site.siteMetadata
+
     return(
       <StyledHeader>
         <Container>
-          <Brand to="/">Ayumi Takahashi</Brand>
+          <Brand to="/">{author}</Brand>
         </Container>
       </StyledHeader>
     )
-  }
 }
 
 export default Header;
