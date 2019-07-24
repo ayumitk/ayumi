@@ -3,7 +3,7 @@ import { Link } from 'gatsby-plugin-intl';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../styles/StyledComponents';
-import Language from './Language';
+import Nav from './Nav';
 
 
 const StyledHeader = styled.header`
@@ -36,7 +36,7 @@ const Header = () => {
     <StyledHeader>
       <Container style={{ display: 'flex' }}>
         <Brand to="/">{author}</Brand>
-        <Language />
+        <Nav />
       </Container>
     </StyledHeader>
   );

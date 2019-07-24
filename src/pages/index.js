@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { injectIntl } from 'gatsby-plugin-intl';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 import { Container } from '../styles/StyledComponents';
@@ -41,7 +42,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+export default injectIntl(BlogIndex);
 
 export const pageQuery = graphql`
   query {

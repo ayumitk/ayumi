@@ -22,7 +22,7 @@ const Button = styled.button`
 `;
 
 const Language = () => (
-  <div style={{ marginLeft: 'auto' }}>
+  <>
     <IntlContextConsumer>
       {({ languages, language: currentLocale }) => languages.map(language => (
         <Button
@@ -36,7 +36,7 @@ const Language = () => (
       ))
         }
     </IntlContextConsumer>
-  </div>
+  </>
 );
 
 export default Language;
