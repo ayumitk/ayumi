@@ -10,6 +10,7 @@ const theme = {
     gray200: '#e4e8ea',
     gray400: '#cbccc6',
     gray500: '#7e8890',
+    lightGray: 'rgba(33, 37, 41, 0.3)',
   },
 };
 

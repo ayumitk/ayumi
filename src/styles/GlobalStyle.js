@@ -93,6 +93,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
   }
 
+  table th{
+    color: ${theme.color.black};
+  }
+
   button, input, textarea{
     line-height: 1.6;
     font-size: 1.8rem;

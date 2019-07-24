@@ -24,7 +24,7 @@ const PostContentWrapper = styled.div`
   h2 {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: solid 1px ${props => props.theme.color.gray300};
+    border-bottom: solid 1px ${props => props.theme.color.lightGray};
   }
   h3 {
     color: ${props => props.theme.color.pink500};
@@ -37,7 +37,7 @@ const PostContentWrapper = styled.div`
     margin-bottom: 1.5rem;
   }
   code {
-    background: ${props => props.theme.color.gray200};
+    background: rgba(33, 37, 41, 0.15);
     display: inline-block;
     padding: 0.15rem 0.35rem;
   }
