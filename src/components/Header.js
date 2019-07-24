@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby-plugin-intl';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../styles/StyledComponents';
+import Language from './Language';
 
 
 const StyledHeader = styled.header`
@@ -32,8 +34,9 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Container>
+      <Container style={{ display: 'flex' }}>
         <Brand to="/">{author}</Brand>
+        <Language />
       </Container>
     </StyledHeader>
   );

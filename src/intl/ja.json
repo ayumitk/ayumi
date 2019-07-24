@@ -1,0 +1,42 @@
+{
+  "about_me": {
+    "description": "カナダ・バンクーバーを拠点に活動する UI/UX Designer & Developer の高橋あゆみです。ブランディングやロゴ、Webサイト、iOS/Androidアプリのデザインから、HTML, CSS, JavaScriptでのフロントエンド開発をしています。WordpressやGatsbyといったテンプレートプラットフォームのカスタマイズも。10年以上の幅広い経験を活かし、ユーザーフレンドリーで、デザインもコードも美しいWebアプリケーション制作を心がけてます。最近はReactが好き。",
+    "current": "現在は、ペットと飼い主さん向けサービスを提供するTech企業で UI/UX Developer (REMOTE) として働いています。"
+  },
+  "skill": {
+    "design": {
+      "title": "UI/UXデザイン",
+      "description": "I value simple content structure, clean design patterns, and thoughtful interactions.",
+      "what-i-do": {
+        "title": "内容:",
+        "list": "UX, UI, Web/モバイルデザイン, Appデザイン, ブランディング, ロゴ制作"
+      },
+      "tools": {
+        "title": "ツール:",
+        "list": "Sketch, Photoshop, Illustrator, Adobe DX, 紙とペン, Invision, Zeplin"
+      }
+    },
+    "dev": {
+      "title": "フロントエンド開発",
+      "description": "I tend to code things from scratch, and enjoy bringing ideas to life in the browser.",
+      "languages": {
+        "title": "言語:",
+        "list": "HTML, CSS/Sass, JavaScript"
+      },
+      "tools": {
+        "title": "ツール:",
+        "list": "VS Code, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby"
+      }
+    }
+  },
+  "read_more": "もっと見る",
+  "keep_reading": "続きを読む →",
+  "not_found": "お探しのページは見つかりませんでした",
+  "contact": {
+    "name": "お名前",
+    "email": "Eメール",
+    "message": "メッセージ",
+    "send": "送信",
+    "thanks": "なるべく早く返信しますね！"
+  }
+}
