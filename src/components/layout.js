@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import theme from '../styles/theme';
@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props
+    const { children } = this.props;
 
     return (
       <>
@@ -20,8 +20,8 @@ class Layout extends React.Component {
           </div>
         </ThemeProvider>
       </>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

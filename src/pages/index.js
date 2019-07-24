@@ -1,24 +1,24 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 import { Container } from '../styles/StyledComponents';
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Container>
-          <h1>Hello, I am Ayumi, a UI/UX Designer and Front-end Developer based in Vancouver, Canada.</h1>
+          <h1>Hello, I am Ayumi, a UI/UX Designer and Front-end Developer based in Vancouver, Canada with 10+ years of experience.</h1>
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+            const title = node.frontmatter.title || node.fields.slug;
             return (
               <div key={node.fields.slug}>
                 <h3>
@@ -33,15 +33,15 @@ class BlogIndex extends React.Component {
                   }}
                 />
               </div>
-            )
+            );
           })}
         </Container>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -66,4 +66,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

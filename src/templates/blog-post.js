@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import styled from 'styled-components';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
 
@@ -11,7 +11,7 @@ import TableOfContents from '../components/TableOfContents';
 
 const Date = styled.p`
   text-align:center;
-  color:${props=> props.theme.color.pink};
+  color:${props => props.theme.color.pink};
   font-weight: 700;
   font-family: 'Gilroy', serif;
 `;
@@ -48,9 +48,9 @@ const PostContentWrapper = styled.div`
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -75,35 +75,39 @@ class BlogPostTemplate extends React.Component {
 
           <ul
             style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              listStyle: 'none',
               padding: 0,
             }}
           >
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                  ←
+                  {' '}
+                  {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
                 <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                  {next.frontmatter.title}
+                  {' '}
+                  →
                 </Link>
               )}
             </li>
           </ul>
         </Container>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -125,4 +129,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

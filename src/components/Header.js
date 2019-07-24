@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Container } from '../styles/StyledComponents';
-import { useStaticQuery, graphql } from 'gatsby';
+
 
 const StyledHeader = styled.header`
   background:#FFF;
@@ -17,8 +17,7 @@ const Brand = styled(Link)`
   }
 `;
 
-const Header = () =>{
-
+const Header = () => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -27,17 +26,17 @@ const Header = () =>{
         }
       }
     }
-  `)
+  `);
 
-  const { author } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata;
 
-    return(
-      <StyledHeader>
-        <Container>
-          <Brand to="/">{author}</Brand>
-        </Container>
-      </StyledHeader>
-    )
-}
+  return (
+    <StyledHeader>
+      <Container>
+        <Brand to="/">{author}</Brand>
+      </Container>
+    </StyledHeader>
+  );
+};
 
 export default Header;
