@@ -25,12 +25,15 @@ const StyledTableOfContents = styled.div`
 
 class TableOfContents extends Component {
   render() {
-    const { toc } = this.props;
+    const { toc, slug } = this.props;
+
+    const regexp = new RegExp(slug, 'g');
+    const newToc = toc.replace(regexp, '');
 
     return (
       <StyledTableOfContents>
         <p>目次</p>
-        <div dangerouslySetInnerHTML={{ __html: toc }} />
+        <div dangerouslySetInnerHTML={{ __html: newToc }} />
       </StyledTableOfContents>
     );
   }
@@ -38,6 +41,7 @@ class TableOfContents extends Component {
 
 TableOfContents.propTypes = {
   toc: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default TableOfContents;

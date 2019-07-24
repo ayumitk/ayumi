@@ -67,7 +67,10 @@ class BlogPostTemplate extends React.Component {
             </h1>
           </header>
 
-          <TableOfContents toc={post.tableOfContents} />
+          <TableOfContents
+            toc={post.tableOfContents}
+            slug={post.fields.slug}
+          />
 
           <PostContentWrapper>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -122,6 +125,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       tableOfContents
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
