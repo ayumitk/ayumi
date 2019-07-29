@@ -5,7 +5,7 @@ import Language from './Language';
 class Nav extends Component {
   render() {
     return (
-      <div style={{ marginLeft: 'auto' }}>
+      <div style={{ marginLeft: 'auto', display: 'flex' }}>
         <nav>
           <Link to="/about/">About</Link>
           <Link to="/blog/">Blog</Link>
