@@ -30,7 +30,6 @@ class BlogRoll extends Component {
         edges: PropTypes.arrayOf(
           PropTypes.shape({
             node: PropTypes.shape({
-              excerpt: PropTypes.string.isRequired,
               frontmatter: PropTypes.shape({
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
@@ -73,11 +72,7 @@ class BlogRoll extends Component {
                     </Link>
                   </h3>
                   <p>{node.frontmatter.date}</p>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
+                  <p>{node.frontmatter.description}</p>
                 </div>
               </article>
             );
@@ -92,10 +87,12 @@ export default () => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 4
+          ) {
           edges {
             node {
-              excerpt
               fields {
                 slug
               }

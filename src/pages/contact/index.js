@@ -27,7 +27,7 @@ class ContactPage extends Component {
         <div>
           <SEO title="Contact" />
           <Container>
-            <h1>Contact</h1>
+            <h1 style={{ padding: '5rem 0' }}>Contact</h1>
             <p>Under Construction</p>
           </Container>
         </div>

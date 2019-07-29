@@ -27,7 +27,7 @@ class AboutPage extends Component {
         <div>
           <SEO title="About Me" />
           <Container>
-            <h1>About Me</h1>
+            <h1 style={{ padding: '5rem 0' }}>About Me</h1>
             <p>Under Construction</p>
           </Container>
         </div>

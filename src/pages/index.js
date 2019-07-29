@@ -30,7 +30,15 @@ class IndexPage extends Component {
         <div>
           <SEO title="All posts" />
           <Container>
-            <h1>Hello, I am Ayumi, a UI/UX Designer and Front-end Developer based in Vancouver, Canada with 10+ years of experience.</h1>
+            <h1 style={{ padding: '7rem 0' }}>
+              Hello, I&apos;m Ayumi,
+              <br />
+              a UI/UX Designer & Front-end Developer
+              <br />
+              with 10+ years of experience
+              <br />
+              based in Vancouver, Canada.
+            </h1>
             <BlogRoll />
             <Link to="/blog/">もっと見る</Link>
           </Container>

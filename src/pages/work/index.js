@@ -27,7 +27,7 @@ class WorkPage extends Component {
         <div>
           <SEO title="Work" />
           <Container>
-            <h1>Work</h1>
+            <h1 style={{ padding: '5rem 0' }}>Work</h1>
             <p>Under Construction</p>
           </Container>
         </div>
