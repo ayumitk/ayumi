@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "ReactアプリでAirbnb製のデートピッカーコンポーネントを使ってみた"
 date: 2019-07-09T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/react-image.png
+featuredimage: /images/react-image.png
 description: デートピッカーのパッケージはいろいろあるけど、Airbnbのreact-datesを使ってみた。
 
 tags:
@@ -125,8 +125,8 @@ Row の方に state を作る。
 
 ```javascript
 state = {
-  date: null
-};
+  date: null,
+}
 ```
 
 ---
@@ -154,15 +154,15 @@ state = {
 このままだと Firebase に登録できなかったので、フォーマットしなおします。
 
 ```javascript
-date.format();
+date.format()
 ```
 
 もちろん、SingleDatePicker にデータを送るときは、momentJS でフォーマットしなおす必要あり。
 
 ```javascript
-import moment from "moment";
+import moment from "moment"
 
-moment(date);
+moment(date)
 ```
 
 [カレンダー UI を実装する React component](http://yuw27b.hatenablog.com/entry/2018/10/04/231748)

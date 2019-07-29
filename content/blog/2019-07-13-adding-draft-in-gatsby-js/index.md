@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Gatsby＋Netlifyのブログ記事を下書き保存したい"
 date: 2019-07-13T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/gatsby-image.png
+featuredimage: /images/gatsby-image.png
 description: Gatsby製のブログ記事を下書き保存して、プロダクション環境でのみ非表示にしたい場合。
 
 tags:
@@ -69,8 +69,8 @@ my-app/
 ```javascript
 const cfg = {
   /* ...my default configuration */
-};
-module.exports = cfg;
+}
+module.exports = cfg
 ```
 
 環境によって分岐し、追加する。
@@ -81,10 +81,10 @@ if (process.env.CONTEXT !== "production") {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `drafts`,
-      path: `${__dirname}/src/drafts`
-    }
-  };
-  cfg.plugins.push(draftsCfg);
+      path: `${__dirname}/src/drafts`,
+    },
+  }
+  cfg.plugins.push(draftsCfg)
 }
 ```
 

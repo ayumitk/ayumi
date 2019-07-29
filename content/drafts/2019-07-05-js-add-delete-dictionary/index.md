@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【JS】連想配列(Dictionary)に要素を追加・削除する"
 date: 2019-07-05T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/js-image.png
+featuredimage: /images/js-image.png
 description: 連想配列に要素を追加・削除する時。
 
 tags:

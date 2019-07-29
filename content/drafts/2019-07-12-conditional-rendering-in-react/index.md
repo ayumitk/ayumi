@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】if分岐"
 date: 2019-07-12T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/react-image.png
+featuredimage: /images/react-image.png
 description: Reactアプリ内で if または Conditional Operator で分岐させたい時に、いつも混乱するのでまとめ
 
 tags:

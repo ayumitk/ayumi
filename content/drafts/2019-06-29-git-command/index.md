@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "よく使うGitコマンド"
 date: 2019-06-29T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/git-image.png
+featuredimage: /images/git-image.png
 description: よく使うのに忘れがちなGitコマンドまとめ。
 
 tags:

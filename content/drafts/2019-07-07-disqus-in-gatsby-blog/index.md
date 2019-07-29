@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Gatsby製のブログにコメント機能を追加"
 date: 2019-07-07T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/gatsby-image.png
+featuredimage: /images/gatsby-image.png
 description: コメント機能を追加を付け足してみた
 
 tags:

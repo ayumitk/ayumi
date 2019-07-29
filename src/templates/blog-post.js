@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
 
@@ -80,6 +82,7 @@ class BlogPostTemplate extends Component {
           date: PropTypes.string.isRequired,
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
+          featuredimage: PropTypes.object.isRequired,
         }),
       }),
     }).isRequired,
@@ -100,12 +103,18 @@ class BlogPostTemplate extends Component {
           />
           <BlogContainer>
 
-            <header>
+            <header style={{ marginBottom: '2rem' }}>
               <Date>{post.frontmatter.date}</Date>
-              <h1>
-                {post.frontmatter.title}
-              </h1>
+              <h1>{post.frontmatter.title}</h1>
+              <p>{post.frontmatter.description}</p>
             </header>
+
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: post.frontmatter.featuredimage,
+                alt: `featured image for post ${post.frontmatter.title}`,
+              }}
+            />
 
             <TableOfContents
               toc={post.tableOfContents}
@@ -145,6 +154,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredimage
       }
     }
   }

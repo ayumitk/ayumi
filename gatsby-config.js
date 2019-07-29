@@ -88,7 +88,7 @@ const cfg = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 590,
+              maxWidth: 2048,
             },
           },
           {
@@ -132,8 +132,8 @@ const cfg = {
         redirect: true,
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

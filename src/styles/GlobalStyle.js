@@ -77,9 +77,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
   }
 
+  img{
+    margin: 0;
+  }
+
   a{
     /* font-family: 'Libre Baskerville', "nsjp", serif; */
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: ${theme.color.black};
     /* font-style: italic; */
     box-shadow: none;

@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】ReactアプリでCSSをあてる方法4つ＋おまけ"
 date: 2019-07-01T15:04:10.000Z
 featuredpost: false
-featuredimage: /img/react-image.png
+featuredimage: /images/react-image.png
 description: ReactアプリでCSSをあてる方法4つ
 
 tags:
@@ -30,24 +30,24 @@ SCSS も直接読めて便利。
 ## 2. Inline styling
 
 ```javascript
-import React from "react";
+import React from "react"
 
 const divStyle = {
   margin: "40px",
-  border: "5px solid pink"
-};
+  border: "5px solid pink",
+}
 const pStyle = {
   fontSize: "15px",
-  textAlign: "center"
-};
+  textAlign: "center",
+}
 
 const Box = () => (
   <div style={divStyle}>
     <p style={pStyle}>Get started with inline style</p>
   </div>
-);
+)
 
-export default Box;
+export default Box
 ```
 
 キーがキャメルケース（camelCased）なのに注意。
@@ -60,16 +60,16 @@ export default Box;
 全てのクラス名がデフォルトでスコープされている。
 
 ```javascript
-import React from "react";
-import styles from "./DashedBox.css";
+import React from "react"
+import styles from "./DashedBox.css"
 
 const DashedBox = () => (
   <div className={styles.container}>
     <p className={styles.content}>Get started with CSS Modules style</p>
   </div>
-);
+)
 
-export default DashedBox;
+export default DashedBox
 ```
 
 create-react-app を使っている場合、webpack のおかげで。

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledTableOfContents = styled.div`
   padding: 2rem;
-  margin: 1.5rem 0 5rem 0;
+  margin-bottom: 5rem;
   border: solid 1px rgba(33, 37, 41, 0.2);
   display: inline-block;
   font-size: 1.6rem;

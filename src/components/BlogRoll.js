@@ -2,8 +2,26 @@ import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 import { Container } from '../styles/StyledComponents';
+
+const BlogRollContainer = styled(Container)`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  article{
+    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    background: rgb(255, 255, 255);
+    h3{
+      margin-bottom: 0.5rem;
+    }
+    p{
+      font-size: 1.4rem;
+    }
+  }
+`;
 
 class BlogRoll extends Component {
   static propTypes = {
@@ -17,6 +35,7 @@ class BlogRoll extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
+                featuredimage: PropTypes.string,
               }),
               fields: PropTypes.shape({
                 slug: PropTypes.string.isRequired,
@@ -34,26 +53,36 @@ class BlogRoll extends Component {
 
     return (
       <>
-        <Container>
+        <BlogRollContainer>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
-              <div key={node.fields.slug}>
-                <h3>
-                  <Link to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </div>
+              <article key={node.fields.slug}>
+                <div style={{ lineHeight: '0' }}>
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: node.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post ${node.frontmatter.title}`,
+                    }}
+                  />
+                </div>
+                <div style={{ padding: '1.5rem 2rem 3rem 2rem' }}>
+                  <h3>
+                    <Link to={node.fields.slug}>
+                      {title}
+                    </Link>
+                  </h3>
+                  <p>{node.frontmatter.date}</p>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </div>
+              </article>
             );
           })}
-        </Container>
+        </BlogRollContainer>
       </>
     );
   }
@@ -74,6 +103,7 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 title
                 description
+                featuredimage
               }
             }
           }
