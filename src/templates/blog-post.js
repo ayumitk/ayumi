@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
@@ -46,65 +47,65 @@ const PostContentWrapper = styled.div`
   }
 `;
 
-class BlogPostTemplate extends React.Component {
+class BlogPostTemplate extends Component {
+  static propTypes = {
+    data: PropTypes.shape({
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          title: PropTypes.string,
+          author: PropTypes.string,
+        }),
+      }),
+      markdownRemark: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        excerpt: PropTypes.string.isRequired,
+        html: PropTypes.string.isRequired,
+        tableOfContents: PropTypes.string.isRequired,
+        fields: PropTypes.shape({
+          slug: PropTypes.string.isRequired,
+        }),
+        frontmatter: PropTypes.shape({
+          date: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+        }),
+      }),
+    }).isRequired,
+    location: PropTypes.object.isRequired,
+  }
+
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
+    const { data, location } = this.props;
+    const post = data.markdownRemark;
+    const siteTitle = data.site.siteMetadata.title;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <Container>
-
-          <header>
-            <Date>{post.frontmatter.date}</Date>
-            <h1>
-              {post.frontmatter.title}
-            </h1>
-          </header>
-
-          <TableOfContents
-            toc={post.tableOfContents}
-            slug={post.fields.slug}
+      <Layout location={location} title={siteTitle}>
+        <div>
+          <SEO
+            title={post.frontmatter.title}
+            description={post.frontmatter.description || post.excerpt}
           />
+          <Container>
 
-          <PostContentWrapper>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </PostContentWrapper>
+            <header>
+              <Date>{post.frontmatter.date}</Date>
+              <h1>
+                {post.frontmatter.title}
+              </h1>
+            </header>
 
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ←
-                  {' '}
-                  {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title}
-                  {' '}
-                  →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </Container>
+            <TableOfContents
+              toc={post.tableOfContents}
+              slug={post.fields.slug}
+            />
+
+            <PostContentWrapper>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </PostContentWrapper>
+
+          </Container>
+        </div>
       </Layout>
     );
   }

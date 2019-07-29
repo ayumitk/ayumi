@@ -26,6 +26,24 @@ const cfg = {
         url: 'https://www.linkedin.com/in/ayumi-takahashi-951831a9',
       },
     ],
+    nav: [
+      {
+        title: 'About',
+        href: '/about/',
+      },
+      {
+        title: 'Blog',
+        href: '/blog/',
+      },
+      {
+        title: 'Work',
+        href: '/work/',
+      },
+      {
+        title: 'Contact',
+        href: '/contact/',
+      },
+    ],
   },
   plugins: [
     {

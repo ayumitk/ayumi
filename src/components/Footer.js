@@ -31,12 +31,20 @@ const SocialLink = styled.a`
 
 class Footer extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          author: PropTypes.string,
+          social: PropTypes.array,
+          nav: PropTypes.array,
+        }),
+      }),
+    }).isRequired,
   }
 
   render() {
     const { data } = this.props;
-    const { author, social } = data.site.siteMetadata;
+    const { author, social, nav } = data.site.siteMetadata;
 
     const socialIcons = [<Twitter />, <Github />, <Dribbble />, <Behance />, <LinkedinIn />];
 
@@ -48,6 +56,11 @@ class Footer extends Component {
     return (
       <StyledFooter>
         <Container>
+          <nav>
+            {nav.map(item => (
+              <Link to={item.href} key={item.title}>{item.title}</Link>
+            ))}
+          </nav>
           <nav>
             {social.map(item => (
               <SocialLink href={item.url} target="_blank" key={item.name}>{item.icon}</SocialLink>
@@ -76,6 +89,10 @@ export default () => (
             social{
               name
               url
+            }
+            nav{
+              title
+              href
             }
           }
         }

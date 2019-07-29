@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 class Layout extends Component {
   static propTypes = {
-    children: PropTypes.array.isRequired,
+    children: PropTypes.element.isRequired,
   }
 
   render() {

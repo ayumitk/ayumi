@@ -8,7 +8,25 @@ import { Container } from '../styles/StyledComponents';
 
 class BlogRoll extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+      allMarkdownRemark: PropTypes.shape({
+        edges: PropTypes.arrayOf(
+          PropTypes.shape({
+            node: PropTypes.shape({
+              excerpt: PropTypes.string.isRequired,
+              frontmatter: PropTypes.shape({
+                date: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+              }),
+              fields: PropTypes.shape({
+                slug: PropTypes.string.isRequired,
+              }),
+            }),
+          }).isRequired,
+        ),
+      }),
+    }).isRequired,
   }
 
   render() {

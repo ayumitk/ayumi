@@ -9,31 +9,38 @@ import BlogRoll from '../components/BlogRoll';
 
 import { Container } from '../styles/StyledComponents';
 
-class BlogIndex extends Component {
+class IndexPage extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          title: PropTypes.string,
+        }),
+      }),
+    }).isRequired,
     location: PropTypes.object.isRequired,
   }
 
   render() {
-    const { data } = this.props;
+    const { data, location } = this.props;
     const siteTitle = data.site.siteMetadata.title;
-    const { location } = this.props;
 
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Container>
-          <h1>Hello, I am Ayumi, a UI/UX Designer and Front-end Developer based in Vancouver, Canada with 10+ years of experience.</h1>
-          <BlogRoll />
-          <Link to="/blog/">もっと見る</Link>
-        </Container>
+        <div>
+          <SEO title="All posts" />
+          <Container>
+            <h1>Hello, I am Ayumi, a UI/UX Designer and Front-end Developer based in Vancouver, Canada with 10+ years of experience.</h1>
+            <BlogRoll />
+            <Link to="/blog/">もっと見る</Link>
+          </Container>
+        </div>
       </Layout>
     );
   }
 }
 
-export default injectIntl(BlogIndex);
+export default injectIntl(IndexPage);
 
 export const pageQuery = graphql`
   query {
