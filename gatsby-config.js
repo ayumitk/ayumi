@@ -8,27 +8,22 @@ const cfg = {
       {
         name: 'Twitter',
         url: 'https://twitter.com/ayumitk__',
-        icon: 'Twitter',
       },
       {
         name: 'Github',
         url: 'https://github.com/ayumitk',
-        icon: 'Github',
       },
       {
         name: 'Dribbble',
         url: 'https://dribbble.com/ayumitk',
-        icon: 'Dribbble',
       },
       {
         name: 'Behance',
         url: 'https://www.behance.net/ayumitk',
-        icon: 'Behance',
       },
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/ayumi-takahashi-951831a9',
-        icon: 'LinkedinIn',
       },
     ],
   },
