@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby';
 import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
-
 import { Container } from '../styles/StyledComponents';
 
 class BlogRoll extends Component {

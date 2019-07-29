@@ -31,7 +31,7 @@ class Header extends Component {
 
     return (
       <StyledHeader>
-        <Container style={{ display: 'flex' }}>
+        <Container style={{ display: 'flex', padding: '1rem 0' }}>
           <Brand to="/">{author}</Brand>
           <Nav />
         </Container>

@@ -17,26 +17,38 @@ const Date = styled.p`
   font-family: 'Gilroy', serif;
 `;
 
+const BlogContainer = styled(Container)`
+  max-width: 840px;
+  padding-top:5rem;
+  padding-bottom:5rem;
+  h1{
+    margin-bottom:3rem;
+  }
+`;
+
 const PostContentWrapper = styled.div`
   hr {
-    margin: 3rem 0;
+    margin: 5rem 0;
     background:none;
   }
   h2 {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
     border-bottom: solid 1px ${props => props.theme.color.lightGray};
   }
   h3 {
     color: ${props => props.theme.color.pink500};
     margin-bottom: 1rem;
   }
-  p + p {
-    margin-top: 1.5em;
+  p,
+  blockquote,
+  pre,
+  table {
+    margin-top: 3rem;
   }
-  ul {
-    margin-bottom: 1.5rem;
-  }
+  /* ul {
+    margin-bottom: 2.5rem;
+  } */
   code {
     background: rgba(33, 37, 41, 0.15);
     display: inline-block;
@@ -86,7 +98,7 @@ class BlogPostTemplate extends Component {
             title={post.frontmatter.title}
             description={post.frontmatter.description || post.excerpt}
           />
-          <Container>
+          <BlogContainer>
 
             <header>
               <Date>{post.frontmatter.date}</Date>
@@ -104,7 +116,7 @@ class BlogPostTemplate extends Component {
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </PostContentWrapper>
 
-          </Container>
+          </BlogContainer>
         </div>
       </Layout>
     );

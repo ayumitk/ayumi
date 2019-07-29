@@ -17,7 +17,7 @@ class Nav extends Component {
       <div style={{ marginLeft: 'auto', display: 'flex' }}>
         <nav>
           {nav.map(item => (
-            <Link to={item.href} key={item.title}>{item.title}</Link>
+            <Link to={item.href} key={item.title} style={{ marginLeft: '1rem' }}>{item.title}</Link>
           ))}
         </nav>
         <Language />
