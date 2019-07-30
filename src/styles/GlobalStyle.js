@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     src: url("/font/nsjpdl.woff") format("woff");
+    font-display: swap;
   }
 
   @font-face {
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 700;
     src: url("/font/nsjpb.woff") format("woff");
+    font-display: swap;
   }
 
   @font-face {
@@ -22,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     src: url("/font/Gilroy-Light.woff") format("woff");
+    font-display: swap;
   }
 
   @font-face {
@@ -29,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 700;
     src: url("/font/Gilroy-ExtraBold.woff") format("woff");
+    font-display: swap;
   }
 
   html{
