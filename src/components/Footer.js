@@ -4,6 +4,8 @@ import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { MailOutline } from 'styled-icons/material/MailOutline';
+
 import { Twitter } from 'styled-icons/fa-brands/Twitter';
 import { Github } from 'styled-icons/fa-brands/Github';
 import { Dribbble } from 'styled-icons/fa-brands/Dribbble';
@@ -24,12 +26,37 @@ const StyledFooter = styled.footer`
   }
 `;
 
-const SocialLink = styled.a`
-  svg{
-    width: 2rem;
-    height: 2rem;
+const FooterNav = styled.nav`
+  a{
+    display: inline-block;
+    padding:1rem;
   }
 `;
+
+const SocialLink = styled.nav`
+  display:flex;
+  justify-content: center;
+  margin:2rem 0;
+  a{
+    display: block;
+    background:#FFF;
+    padding: 1rem;
+    border-radius:100%;
+    color:${props => props.theme.color.black};
+    margin: 0.5rem;
+    line-height:0;
+    &:hover{
+      background: ${props => props.theme.color.pink};
+    }
+  }
+`;
+
+const Copyright = styled.p`
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top:2rem;
+`;
+
 
 class Footer extends Component {
   static propTypes = {
@@ -58,24 +85,30 @@ class Footer extends Component {
     return (
       <StyledFooter>
         <Container>
-          <nav>
+          <FooterNav>
             {nav.map(item => (
               <Link to={item.href} key={item.title}>{item.title}</Link>
             ))}
-          </nav>
-          <nav>
+          </FooterNav>
+          <SocialLink>
             {social.map(item => (
-              <SocialLink href={item.url} target="_blank" key={item.name}>{item.icon}</SocialLink>
+              <a href={item.url} target="_blank" key={item.name}>{item.icon}</a>
             ))}
-          </nav>
-          <p><a href="mailto:hello@ayumi.tk " rel="external">hello@ayumi.tk</a></p>
-          <Link to="/">
-            ©
+          </SocialLink>
+          <p>
+            <MailOutline />
             {' '}
-            {new Date().getFullYear()}
-            {' '}
-            {author}
-          </Link>
+            <a href="mailto:hello@ayumi.tk " rel="external">hello@ayumi.tk</a>
+          </p>
+          <Copyright>
+            <Link to="/">
+              ©
+              {' '}
+              {new Date().getFullYear()}
+              {' '}
+              {author}
+            </Link>
+          </Copyright>
         </Container>
       </StyledFooter>
     );

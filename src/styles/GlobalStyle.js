@@ -124,6 +124,11 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     border:0;
   }
+
+  svg{
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 export default GlobalStyle;
