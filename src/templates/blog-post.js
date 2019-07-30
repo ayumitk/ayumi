@@ -64,6 +64,10 @@ const PostContentWrapper = styled.div`
   }
 `;
 
+const StyledFooter = styled.footer`
+  margin: 5rem 0;
+`;
+
 class BlogPostTemplate extends Component {
   static propTypes = {
     data: PropTypes.shape({
@@ -101,7 +105,7 @@ class BlogPostTemplate extends Component {
     const { excerpt, html, tableOfContents } = post;
     const { slug } = post.fields;
     const {
-      date, title, description, featuredimage,
+      date, title, description, featuredimage, tags,
     } = post.frontmatter;
 
     const disqusConfig = {
@@ -142,15 +146,15 @@ class BlogPostTemplate extends Component {
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </PostContentWrapper>
 
-            <footer>
-              {post.frontmatter.tags && post.frontmatter.tags.length ? (
+            <StyledFooter>
+              {tags && tags.length ? (
                 <div>
-                  {post.frontmatter.tags.map(tag => (
+                  {tags.map(tag => (
                     <Link key={`${tag}tag`} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                   ))}
                 </div>
               ) : null}
-            </footer>
+            </StyledFooter>
 
             <DiscussionEmbed {...disqusConfig} />
 
