@@ -82,7 +82,7 @@ class BlogPostTemplate extends Component {
           date: PropTypes.string.isRequired,
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
-          featuredimage: PropTypes.object.isRequired,
+          featuredimage: PropTypes.string,
         }),
       }),
     }).isRequired,
@@ -109,12 +109,14 @@ class BlogPostTemplate extends Component {
               <p>{post.frontmatter.description}</p>
             </header>
 
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: post.frontmatter.featuredimage,
-                alt: `featured image for post ${post.frontmatter.title}`,
-              }}
-            />
+            <div style={{ lineHeight: '0' }}>
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  alt: `featured image for post ${post.frontmatter.title}`,
+                }}
+              />
+            </div>
 
             <TableOfContents
               toc={post.tableOfContents}
