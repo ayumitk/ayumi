@@ -24,6 +24,11 @@ const StyledTableOfContents = styled.div`
 `;
 
 class TableOfContents extends Component {
+  static propTypes = {
+    toc: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+  }
+
   render() {
     const { toc, slug } = this.props;
 
@@ -38,10 +43,5 @@ class TableOfContents extends Component {
     );
   }
 }
-
-TableOfContents.propTypes = {
-  toc: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-};
 
 export default TableOfContents;

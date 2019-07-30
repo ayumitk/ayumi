@@ -50,7 +50,7 @@ class Footer extends Component {
 
     const socialIcons = [<Twitter />, <Github />, <Dribbble />, <Behance />, <LinkedinIn />];
 
-    for (const i in social) {
+    for (let i = 0; i < social.length; i += 1) {
       social[i].icon = socialIcons[i];
     }
 
