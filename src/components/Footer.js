@@ -68,6 +68,7 @@ class Footer extends Component {
               <SocialLink href={item.url} target="_blank" key={item.name}>{item.icon}</SocialLink>
             ))}
           </nav>
+          <p><a href="mailto:hello@ayumi.tk " rel="external">hello@ayumi.tk</a></p>
           <Link to="/">
             ©
             {' '}
