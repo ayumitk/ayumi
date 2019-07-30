@@ -20,7 +20,7 @@ const Button = styled.button`
   margin-left:1rem;
   line-height: 1;
   &:not(.active):hover{
-    background: ${props => props.theme.color.pink};
+    /* background: ${props => props.theme.color.pink}; */
     color: ${props => props.theme.color.black};
     text-decoration: underline;
   }

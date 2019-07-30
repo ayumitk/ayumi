@@ -8,33 +8,7 @@ import Layout from '../components/Layout';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 
-import { Container } from '../styles/StyledComponents';
-
-const BlogRoll = styled.div`
-  margin-bottom: 5rem;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  @media (max-width: 991.98px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media (max-width: 767.98px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 565.98px) {
-    grid-template-columns: 1fr;
-  }
-  article{
-    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    background: rgb(255, 255, 255);
-    h3{
-      margin-bottom: 0.5rem;
-    }
-    p{
-      font-size: 1.4rem;
-    }
-  }
-`;
+import { Container, BlogRollGrid } from '../styles/StyledComponents';
 
 const Pagination = styled.ul`
   display:flex;
@@ -57,6 +31,9 @@ const Pagination = styled.ul`
         background:${props => props.theme.color.pink};
         border-color: ${props => props.theme.color.pink};
         font-weight:700;
+        &:hover{
+          cursor:default;
+        }
       }
     }
   }
@@ -112,7 +89,7 @@ class BlogList extends Component {
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Blog</h1>
 
-            <BlogRoll>
+            <BlogRollGrid style={{ marginBottom: '5rem' }}>
               {posts.map(({ node }) => {
                 const { slug } = node.fields;
                 const {
@@ -121,27 +98,25 @@ class BlogList extends Component {
 
                 return (
                   <article key={slug}>
-                    <div style={{ lineHeight: '0' }}>
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: featuredimage,
-                          alt: `featured image thumbnail for post ${title}`,
-                        }}
-                      />
-                    </div>
-                    <div style={{ padding: '1.5rem 2rem 3rem 2rem' }}>
-                      <h3>
-                        <Link to={slug}>
-                          {title}
-                        </Link>
-                      </h3>
-                      <p>{date}</p>
-                      <p>{description}</p>
-                    </div>
+                    <Link to={slug}>
+                      <div className="blog-roll-grid__image">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: featuredimage,
+                            alt: `featured image thumbnail for post ${title}`,
+                          }}
+                        />
+                      </div>
+                      <div className="blog-roll-grid__inner">
+                        <h3>{title}</h3>
+                        <p>{date}</p>
+                        <p>{description}</p>
+                      </div>
+                    </Link>
                   </article>
                 );
               })}
-            </BlogRoll>
+            </BlogRollGrid>
 
             <Pagination>
               {!isFirst && (

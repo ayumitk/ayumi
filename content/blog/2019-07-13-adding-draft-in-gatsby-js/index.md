@@ -23,15 +23,15 @@ tags:
 
 上記を踏まえて、どういった方法があるのか探してみたところ、すごくシンプルな方法がありました。
 
-> _参考:_
+> 参考 :
 >
 > - [Writing Drafts in GatsbyJS](https://chaseonsoftware.com/gatsby-drafts/)
 
-| Stage                  | content/blog         | content/drafts       |
-| ---------------------- | -------------------- | -------------------- |
-| Local Development      | ✅ (symlink)         | ✅ (symlink)         |
-| Non-Production Netlify | ✅ (pulled at build) | ✅ (pulled at build) |
-| Production Netlify     | ✅ (pulled at build) | ❌                   |
+| Stage                  | content/blog | content/drafts |
+| ---------------------- | ------------ | -------------- |
+| Local Development      | ✅           | ✅             |
+| Non-Production Netlify | ✅           | ✅             |
+| Production Netlify     | ✅           | ❌             |
 
 プロダクションブランチ(master)では、draft の記事は表示されない。  
 ローカルホストと、プロダクションブランチ(master)以外のブランチ(develop)では、表示される。
@@ -88,10 +88,10 @@ if (process.env.CONTEXT !== "production") {
 }
 ```
 
-たったこれだけで完成！
+たったこれだけで完成 🙌
 
 ローカルで gatsby develop を実行してみる。  
-localhost
+http://localhost:8000/
 
 Netlify で master ブランチをデプロイしてみよう。  
 https://gatsby-draft.netlify.com/
@@ -99,4 +99,4 @@ https://gatsby-draft.netlify.com/
 さらに、develop ブランチも作成して、Netlify でデプロイしてみよう。  
 https://develop--gatsby-draft.netlify.com/
 
-[GitHub からダウンロード](https://github.com/ayumitk/gatsby-drafts)
+<a href="https://github.com/ayumitk/gatsby-drafts" target="_blank" class="btn">GitHub からダウンロード</a>

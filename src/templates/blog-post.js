@@ -32,6 +32,10 @@ const BlogContainer = styled(Container)`
 `;
 
 const PostContentWrapper = styled.div`
+  a{
+    color:${props => props.theme.color.pink};
+    text-decoration:underline;
+  }
   hr {
     margin: 5rem 0;
     background:none;
@@ -42,30 +46,62 @@ const PostContentWrapper = styled.div`
     border-bottom: solid 1px ${props => props.theme.color.lightGray};
   }
   h3 {
-    color: ${props => props.theme.color.pink500};
+    color: ${props => props.theme.color.pink};
     margin-bottom: 1rem;
   }
   p,
   blockquote,
-  pre,
   table {
     margin-top: 3rem;
   }
-  /* ul {
-    margin-bottom: 2.5rem;
-  } */
+  blockquote {
+    background: rgba(0,0,0,0.05);
+    padding: 1.5rem 2rem;
+    margin: 3rem 0 0 0;
+    border-left: solid 3px ${props => props.theme.color.black};
+    p{
+      margin:0;
+    }
+    a{
+      color:${props => props.theme.color.black};
+    }
+  }
   code {
-    background: rgba(33, 37, 41, 0.15);
     display: inline-block;
     padding: 0.15rem 0.35rem;
+    /* color: ${props => props.theme.color.pink}; */
+    color: ${props => props.theme.color.black};
+    background: rgba(0, 0, 0, 0.075);
   }
   pre > code {
     background: transparent;
+    color: #cbccc6;
+  }
+  .btn{
+    display:block;
+    max-width:300px;
+    width:80%;
+    margin:0 auto;
+    background:${props => props.theme.color.pink};
+    padding:1rem 2rem;
+    color:${props => props.theme.color.black};
+    border-radius:3px;
+    text-decoration:none;
+    text-align:center;
+    font-weight: 700;
+    &:hover{
+      opacity:0.8;
+    }
   }
 `;
 
-const StyledFooter = styled.footer`
-  margin: 5rem 0;
+const TagList = styled.div`
+  a{
+    display: inline-block;
+    margin-right: 1rem;
+    color:${props => props.theme.color.pink};
+    text-decoration:underline;
+  }
 `;
 
 class BlogPostTemplate extends Component {
@@ -146,15 +182,17 @@ class BlogPostTemplate extends Component {
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </PostContentWrapper>
 
-            <StyledFooter>
-              {tags && tags.length ? (
-                <div>
-                  {tags.map(tag => (
-                    <Link key={`${tag}tag`} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  ))}
-                </div>
-              ) : null}
-            </StyledFooter>
+            <footer style={{ margin: '5rem 0' }}>
+              <TagList>
+                {tags && tags.length ? (
+                  <>
+                    {tags.map(tag => (
+                      <Link key={`${tag}tag`} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    ))}
+                  </>
+                ) : null}
+              </TagList>
+            </footer>
 
             <DiscussionEmbed {...disqusConfig} />
 

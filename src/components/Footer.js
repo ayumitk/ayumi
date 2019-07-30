@@ -23,6 +23,9 @@ const StyledFooter = styled.footer`
   padding: 3rem 0;
   a{
     color:#FFF;
+    &:hover{
+      color:${props => props.theme.color.pink};
+    }
   }
 `;
 
@@ -47,6 +50,7 @@ const SocialLink = styled.nav`
     line-height:0;
     &:hover{
       background: ${props => props.theme.color.pink};
+      color:${props => props.theme.color.black};
     }
   }
 `;
@@ -55,6 +59,12 @@ const Copyright = styled.p`
   text-align: center;
   font-size: 1.3rem;
   margin-top:2rem;
+`;
+
+const MailLink = styled.p`
+  &:hover{
+    color:${props => props.theme.color.pink};
+  }
 `;
 
 
@@ -95,11 +105,11 @@ class Footer extends Component {
               <a href={item.url} target="_blank" key={item.name}>{item.icon}</a>
             ))}
           </SocialLink>
-          <p>
+          <MailLink>
             <MailOutline />
             {' '}
             <a href="mailto:hello@ayumi.tk " rel="external">hello@ayumi.tk</a>
-          </p>
+          </MailLink>
           <Copyright>
             <Link to="/">
               ©

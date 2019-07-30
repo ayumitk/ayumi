@@ -4,7 +4,7 @@ title: "Create-react-appでAirbnbのESLintを使う"
 date: 2019-06-26T15:04:10.000Z
 featuredpost: false
 featuredimage: /images/react-image.svg
-description: Create-react-app でReactアプリケーションを作る時に、AirbnbのESlintも入れたい時。
+description: Create-react-app でReactアプリケーションを作る時に、AirbnbのESlintも入れたい時
 
 tags:
   - JavaScript
@@ -53,7 +53,7 @@ npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react
 }
 ```
 
-> _参考:_  
+> 参考 :  
 > [eslint-config-airbnb - GitHub](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 
 ---
@@ -75,7 +75,7 @@ npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react
 
 ESLint のルールは自分に合わせて追加していきましょう。
 
-> _参考:_  
+> 参考 :  
 > [wesbos/dotfiles: Hey wes what settings do you use? - GitHub](https://github.com/wesbos/dotfiles/blob/master/.eslintrc)
 
 ---
@@ -88,7 +88,7 @@ ESLint のルールは自分に合わせて追加していきましょう。
 src / serviceWorker.js
 ```
 
-これで完成!
+これで完成 🙌
 
 私は [Visual Studio Code](https://code.visualstudio.com/) というエディタを使っているので、[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) エクステンションもインストールして使用しています。  
 ルールに沿わないコードには赤い波線が付き、 常に PROBLEMS タブでに怒られつつ、保存時に自動で Lint してくれるように設定しているので、非常に助かります。

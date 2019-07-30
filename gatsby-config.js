@@ -110,7 +110,7 @@ const cfg = {
         fonts: [
           {
             family: 'Montserrat',
-            variants: ['400', '700'],
+            variants: ['400', '600', '700'],
           },
         ],
       },

@@ -4,7 +4,7 @@ title: "JavaScriptで配列の中から、特定の要素を持つオブジェ�
 date: 2019-06-25T15:04:10.000Z
 featuredpost: false
 featuredimage: /images/js-image.svg
-description: 配列の中から何かを探し出す時のメソッドまとめ。
+description: 配列の中から何かを探し出す時のメソッドまとめ
 
 tags:
   - JavaScript
@@ -24,8 +24,6 @@ React を使ってアプリケーションを作るようになって、配列(A
 条件に合う _最初のオブジェクトが 1 つ_ だけ返る。  
 無ければ `undefined` が返る。
 
-[Array.prototype.find() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-
 ```javascript
 const users = [
   { name: "Emma", age: 20 },
@@ -41,14 +39,15 @@ console.log(targetUser)
 // Emma だけが返る、Harry は返らない。
 ```
 
+> 参考 :  
+> [Array.prototype.find() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
 ---
 
 ## filter() 条件に合うオブジェクト全てを探す時
 
 条件に合うオブジェクト _全て_ が配列で返る。  
 見つからなかったら空の配列。
-
-[Array.prototype.filter() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ```javascript
 const users = [
@@ -68,14 +67,15 @@ console.log(targetUser)
 // Emma も Olivia も返る。
 ```
 
+> 参考 :  
+> [Array.prototype.filter() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
 ---
 
 ## findIndex() 条件に合うオブジェクトのインデックスを知りたい時
 
 条件に合う _最初のオブジェクトのインデックス_ だけが返る。  
 見つからなかったら `-1` が返る。
-
-[Array.prototype.findIndex() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
 ```javascript
 const users = [
@@ -92,13 +92,14 @@ console.log(index)
 // Emma の index 0 だけが返る。Harry の index は返らない。
 ```
 
+> 参考 :  
+> [Array.prototype.findIndex() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
 ---
 
 ## some() 条件に合うオブジェクトがあるかないかだけ知りたい時
 
 条件に合うオブジェクトが 1 つでもあれば、 `true` 、無ければ `false` が返る。
-
-[Array.prototype.some() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 ```javascript
 const users = [
@@ -114,3 +115,6 @@ console.log(existing)
 
 // => true
 ```
+
+> 参考 :  
+> [Array.prototype.some() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
