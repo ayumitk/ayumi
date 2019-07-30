@@ -51,11 +51,7 @@ class BlogRoll extends Component {
                     />
                   </div>
                   <div className="blog-roll-grid__inner">
-                    <h3>
-                      <Link to={node.fields.slug}>
-                        {title}
-                      </Link>
-                    </h3>
+                    <h3>{title}</h3>
                     <p>{node.frontmatter.date}</p>
                     <p>{node.frontmatter.description}</p>
                   </div>
