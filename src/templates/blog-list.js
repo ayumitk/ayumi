@@ -11,6 +11,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import { Container } from '../styles/StyledComponents';
 
 const BlogRoll = styled.div`
+  margin-bottom: 5rem;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -31,6 +32,32 @@ const BlogRoll = styled.div`
     }
     p{
       font-size: 1.4rem;
+    }
+  }
+`;
+
+const Pagination = styled.ul`
+  display:flex;
+  justify-content: center;
+  a{
+    display:block;
+    /* border: solid 1px ${props => props.theme.color.gray}; */
+    border:solid 1px rgba(0,0,0,0.2);
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    &:hover{
+      text-decoration: none;
+      background: rgba(0,0,0,0.1);
+      border-color: rgba(0,0,0,0.1);
+    }
+  }
+  li{
+    &.active{
+      a{
+        background:${props => props.theme.color.pink};
+        border-color: ${props => props.theme.color.pink};
+        font-weight:700;
+      }
     }
   }
 `;
@@ -84,6 +111,7 @@ class BlogList extends Component {
           <SEO title="Blog" />
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Blog</h1>
+
             <BlogRoll>
               {posts.map(({ node }) => {
                 const { slug } = node.fields;
@@ -114,14 +142,16 @@ class BlogList extends Component {
                 );
               })}
             </BlogRoll>
-            <ul>
+
+            <Pagination>
               {!isFirst && (
                 <Link to={`/blog/${prevPage}/`} rel="prev">
-                  ← Previous Page
+                  ← Prev
                 </Link>
               )}
               {Array.from({ length: numPages }, (_, i) => (
                 <li
+                  className={`${currentPage === i + 1 ? 'active' : ''}`}
                   key={`pagination-number${i + 1}`}
                 >
                   <Link
@@ -133,10 +163,11 @@ class BlogList extends Component {
               ))}
               {!isLast && (
               <Link to={`/blog/${nextPage}/`} rel="next">
-                Next Page →
+                Next →
               </Link>
               )}
-            </ul>
+            </Pagination>
+
           </Container>
         </div>
       </Layout>
