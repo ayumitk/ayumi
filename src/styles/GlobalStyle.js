@@ -104,6 +104,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
   }
 
+  table{
+    width: 100%;
+    table-layout: fixed;
+  }
+
   table th{
     color: ${theme.color.black};
   }
