@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
+import { Container } from '../styles/StyledComponents';
+
 class NotFoundPage extends Component {
   static propTypes = {
     data: PropTypes.shape({
@@ -23,11 +25,11 @@ class NotFoundPage extends Component {
 
     return (
       <Layout location={location} title={siteTitle}>
-        <div>
+        <Container>
           <SEO title="404: Not Found" />
-          <h1>Not Found</h1>
+          <h1 style={{ padding: '5rem 0' }}>Not Found</h1>
           <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-        </div>
+        </Container>
       </Layout>
     );
   }

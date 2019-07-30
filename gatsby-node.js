@@ -1,10 +1,10 @@
+const _ = require('lodash');
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve('./src/templates/blog-post.js');
   const result = await graphql(
     `
       {
@@ -21,6 +21,8 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                tags
+                templateKey
               }
             }
           }
@@ -42,7 +44,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: path.resolve(
+        `src/templates/${String(post.node.frontmatter.templateKey)}.js`,
+      ),
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -63,6 +67,30 @@ exports.createPages = async ({ graphql, actions }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+      },
+    });
+  });
+
+  // Tag pages:
+  let tags = [];
+  // Iterate through each post, putting all found tags into `tags`
+  posts.forEach((edge) => {
+    if (_.get(edge, 'node.frontmatter.tags')) {
+      tags = tags.concat(edge.node.frontmatter.tags);
+    }
+  });
+  // Eliminate duplicate tags
+  tags = _.uniq(tags);
+
+  // Make tag pages
+  tags.forEach((tag) => {
+    const tagPath = `/tags/${_.kebabCase(tag)}/`;
+
+    createPage({
+      path: tagPath,
+      component: path.resolve('src/templates/tags.js'),
+      context: {
+        tag,
       },
     });
   });

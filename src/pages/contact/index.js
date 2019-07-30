@@ -40,7 +40,7 @@ class Index extends Component {
     return (
       <Layout>
         <Container>
-          <h1>Contact</h1>
+          <h1 style={{ padding: '5rem 0' }}>Contact</h1>
           <form
             name="contact"
             method="post"

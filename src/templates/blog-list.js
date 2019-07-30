@@ -14,6 +14,15 @@ const BlogRoll = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 565.98px) {
+    grid-template-columns: 1fr;
+  }
   article{
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     background: rgb(255, 255, 255);

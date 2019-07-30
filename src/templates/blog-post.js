@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby-plugin-intl';
+import { kebabCase } from 'lodash';
 
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -82,6 +84,7 @@ class BlogPostTemplate extends Component {
           date: PropTypes.string.isRequired,
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
+          tags: PropTypes.array.isRequired,
           featuredimage: PropTypes.string,
         }),
       }),
@@ -127,6 +130,16 @@ class BlogPostTemplate extends Component {
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </PostContentWrapper>
 
+            <footer>
+              {post.frontmatter.tags && post.frontmatter.tags.length ? (
+                <div>
+                  {post.frontmatter.tags.map(tag => (
+                    <Link key={`${tag}tag`} to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  ))}
+                </div>
+              ) : null}
+            </footer>
+
           </BlogContainer>
         </div>
       </Layout>
@@ -156,6 +169,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
         featuredimage
       }
     }
