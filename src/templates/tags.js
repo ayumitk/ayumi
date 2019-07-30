@@ -7,35 +7,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-import { Container } from '../styles/StyledComponents';
-
-const BlogRollContainer = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  @media (max-width: 991.98px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media (max-width: 767.98px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 565.98px) {
-    grid-template-columns: 1fr;
-  }
-  article{
-    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    background: rgb(255, 255, 255);
-    a{
-      display:block;
-    }
-    h3{
-      margin-bottom: 0.5rem;
-    }
-    p{
-      font-size: 1.4rem;
-    }
-  }
-`;
+import { Container, BlogRollGrid } from '../styles/StyledComponents';
 
 class TagRoute extends Component {
   static propTypes = {
@@ -66,7 +38,7 @@ class TagRoute extends Component {
     }).isRequired,
     location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
-      tag: PropTypes.array.isRequired,
+      tag: PropTypes.string.isRequired,
     }).isRequired,
   }
 
@@ -74,22 +46,6 @@ class TagRoute extends Component {
     const { data, location, pageContext } = this.props;
     const posts = data.allMarkdownRemark.edges;
     const siteTitle = data.site.siteMetadata.title;
-
-    const postLinks = posts.map(post => (
-      <article key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <PreviewCompatibleImage
-            imageInfo={{
-              image: post.node.frontmatter.featuredimage,
-              alt: `featured image thumbnail for post ${post.node.frontmatter.title}`,
-            }}
-          />
-          <h3>{post.node.frontmatter.title}</h3>
-          <p>{post.node.frontmatter.date}</p>
-          <p>{post.node.frontmatter.description}</p>
-        </Link>
-      </article>
-    ));
 
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
@@ -103,7 +59,27 @@ class TagRoute extends Component {
           <SEO title={tagHeader} />
           <Container>
             <h1 style={{ padding: '5rem 0' }}>{tagHeader}</h1>
-            <BlogRollContainer>{postLinks}</BlogRollContainer>
+            <BlogRollGrid>
+              {posts.map(post => (
+                <article key={post.node.fields.slug}>
+                  <Link to={post.node.fields.slug}>
+                    <div className="blog-roll-grid__image">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: post.node.frontmatter.featuredimage,
+                          alt: `featured image thumbnail for post ${post.node.frontmatter.title}`,
+                        }}
+                      />
+                    </div>
+                    <div className="blog-roll-grid__inner">
+                      <h3>{post.node.frontmatter.title}</h3>
+                      <p>{post.node.frontmatter.date}</p>
+                      <p>{post.node.frontmatter.description}</p>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </BlogRollGrid>
             <Link to="/tags/">Browse all tags</Link>
           </Container>
         </div>

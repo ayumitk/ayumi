@@ -5,33 +5,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
-const BlogRollContainer = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  @media (max-width: 991.98px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media (max-width: 767.98px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 565.98px) {
-    grid-template-columns: 1fr;
-  }
-  article{
-    box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    background: rgb(255, 255, 255);
-    a{
-      display:block;
-    }
-    h3{
-      margin-bottom: 0.5rem;
-    }
-    p{
-      font-size: 1.4rem;
-    }
-  }
-`;
+import { BlogRollGrid } from '../styles/StyledComponents';
 
 class BlogRoll extends Component {
   static propTypes = {
@@ -62,32 +36,34 @@ class BlogRoll extends Component {
 
     return (
       <>
-        <BlogRollContainer>
+        <BlogRollGrid>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
               <article key={node.fields.slug}>
-                <Link to={node.fields.slug} style={{ lineHeight: '0' }}>
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: node.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${node.frontmatter.title}`,
-                    }}
-                  />
+                <Link to={node.fields.slug}>
+                  <div className="blog-roll-grid__image">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: node.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${node.frontmatter.title}`,
+                      }}
+                    />
+                  </div>
+                  <div className="blog-roll-grid__inner">
+                    <h3>
+                      <Link to={node.fields.slug}>
+                        {title}
+                      </Link>
+                    </h3>
+                    <p>{node.frontmatter.date}</p>
+                    <p>{node.frontmatter.description}</p>
+                  </div>
                 </Link>
-                <div style={{ padding: '1.5rem 2rem 3rem 2rem' }}>
-                  <h3>
-                    <Link to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <p>{node.frontmatter.date}</p>
-                  <p>{node.frontmatter.description}</p>
-                </div>
               </article>
             );
           })}
-        </BlogRollContainer>
+        </BlogRollGrid>
       </>
     );
   }
