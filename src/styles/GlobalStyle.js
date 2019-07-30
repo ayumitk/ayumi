@@ -7,28 +7,28 @@ const GlobalStyle = createGlobalStyle`
     font-family: "nsjp";
     font-style: normal;
     font-weight: 400;
-    src: url("../../font/nsjpdl.woff") format("woff");
+    src: url("/font/nsjpdl.woff") format("woff");
   }
 
   @font-face {
     font-family: "nsjp";
     font-style: normal;
     font-weight: 700;
-    src: url("../../font/nsjpb.woff") format("woff");
+    src: url("/font/nsjpb.woff") format("woff");
   }
 
   @font-face {
     font-family: "Gilroy";
     font-style: normal;
     font-weight: 400;
-    src: url("../../font/Gilroy-Light.woff") format("woff");
+    src: url("/font/Gilroy-Light.woff") format("woff");
   }
 
   @font-face {
     font-family: "Gilroy";
     font-style: normal;
     font-weight: 700;
-    src: url("../../font/Gilroy-ExtraBold.woff") format("woff");
+    src: url("/font/Gilroy-ExtraBold.woff") format("woff");
   }
 
   html{
