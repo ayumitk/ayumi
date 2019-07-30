@@ -68,6 +68,12 @@ const GlobalStyle = createGlobalStyle`
 
   h1{
     font-size: 4rem;
+    @media (max-width: 991.98px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 565.98px) {
+      font-size: 2rem;
+    }
   }
 
   h2 {
@@ -88,7 +94,8 @@ const GlobalStyle = createGlobalStyle`
     /* font-style: italic; */
     box-shadow: none;
     &:hover{
-      background: ${theme.color.pink};
+      /* background: ${theme.color.pink}; */
+      text-decoration: underline;
     }
   }
 

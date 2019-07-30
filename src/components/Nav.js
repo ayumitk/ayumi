@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby-plugin-intl';
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Language from './Language';
+
+const StyledNav = styled.div`
+  margin-left:auto;
+  display:flex;
+  @media (max-width: 565.98px) {
+    display:none;
+  }
+`;
 
 class Nav extends Component {
   static propTypes = {
@@ -14,14 +23,14 @@ class Nav extends Component {
     const { nav } = data.site.siteMetadata;
 
     return (
-      <div style={{ marginLeft: 'auto', display: 'flex' }}>
+      <StyledNav>
         <nav>
           {nav.map(item => (
             <Link to={item.href} key={item.title} style={{ marginLeft: '1rem' }}>{item.title}</Link>
           ))}
         </nav>
         <Language />
-      </div>
+      </StyledNav>
     );
   }
 }

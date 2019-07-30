@@ -17,6 +17,8 @@ const StyledFooter = styled.footer`
   background: ${props => props.theme.color.black};
   color: #FFF;
   text-align:center;
+  margin-top:10rem;
+  padding: 3rem 0;
   a{
     color:#FFF;
   }

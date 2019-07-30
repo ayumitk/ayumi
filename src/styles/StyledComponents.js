@@ -60,9 +60,8 @@ const Textarea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background: ${props => props.theme.color.pink500};
-  padding: 12px 24px;
-  border-radius: 96px;
+  background: ${props => props.theme.color.pink};
+  padding: 1rem 2rem;
   display: inline-block;
   color: #FFF;
   text-decoration: none;

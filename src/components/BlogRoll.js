@@ -5,15 +5,25 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
-import { Container } from '../styles/StyledComponents';
-
-const BlogRollContainer = styled(Container)`
+const BlogRollContainer = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 991.98px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 565.98px) {
+    grid-template-columns: 1fr;
+  }
   article{
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     background: rgb(255, 255, 255);
+    a{
+      display:block;
+    }
     h3{
       margin-bottom: 0.5rem;
     }
@@ -57,14 +67,14 @@ class BlogRoll extends Component {
             const title = node.frontmatter.title || node.fields.slug;
             return (
               <article key={node.fields.slug}>
-                <div style={{ lineHeight: '0' }}>
+                <Link to={node.fields.slug} style={{ lineHeight: '0' }}>
                   <PreviewCompatibleImage
                     imageInfo={{
                       image: node.frontmatter.featuredimage,
                       alt: `featured image thumbnail for post ${node.frontmatter.title}`,
                     }}
                   />
-                </div>
+                </Link>
                 <div style={{ padding: '1.5rem 2rem 3rem 2rem' }}>
                   <h3>
                     <Link to={node.fields.slug}>

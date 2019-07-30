@@ -39,6 +39,7 @@ class IndexPage extends Component {
               <br />
               based in Vancouver, Canada.
             </h1>
+            <h2>Latest Tips</h2>
             <BlogRoll />
             <Link to="/blog/">もっと見る</Link>
           </Container>
