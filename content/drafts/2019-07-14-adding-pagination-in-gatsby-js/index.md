@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "ページネーションを追加する"
 date: 2019-07-14T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.png
+featuredimage: /images/gatsby-image.svg
 description: ページネーションを追加する
 
 tags:

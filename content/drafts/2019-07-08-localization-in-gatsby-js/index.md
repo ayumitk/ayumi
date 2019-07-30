@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【GatsbyJS】日英切替機能を作る"
 date: 2019-07-08T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.png
+featuredimage: /images/gatsby-image.svg
 description: 日英切替機能を作る
 
 tags:

@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "SVGアイコンをReactアプリ内で使う"
 date: 2019-06-28T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/react-image.png
+featuredimage: /images/react-image.svg
 description: 面倒だったSVGスプラウトがReactならそのままコンポーネントとして読み込める。
 
 tags:

@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】ReactアプリでCSSをあてる方法4つ＋おまけ"
 date: 2019-07-01T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/react-image.png
+featuredimage: /images/react-image.svg
 description: ReactアプリでCSSをあてる方法4つ
 
 tags:

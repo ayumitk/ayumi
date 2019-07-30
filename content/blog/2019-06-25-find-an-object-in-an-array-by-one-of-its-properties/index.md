@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "JavaScriptで配列の中から、特定の要素を持つオブジェクトを探す"
 date: 2019-06-25T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/js-image.png
+featuredimage: /images/js-image.svg
 description: 配列の中から何かを探し出す時のメソッドまとめ。
 
 tags:

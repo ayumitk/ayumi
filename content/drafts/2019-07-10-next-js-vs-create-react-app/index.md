@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】Next.js vs. Create React App"
 date: 2019-07-10T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/react-image.png
+featuredimage: /images/react-image.svg
 description: どっちを使うの？
 
 tags:

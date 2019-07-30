@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【GatsbyJS】Googleアナリティクスを入れる"
 date: 2019-06-30T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.png
+featuredimage: /images/gatsby-image.svg
 description: Googleアナリティクスを入れる
 
 tags:

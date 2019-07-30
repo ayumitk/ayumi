@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Gatsby＋Netlifyのブログ記事を下書き保存したい"
 date: 2019-07-13T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.png
+featuredimage: /images/gatsby-image.svg
 description: Gatsby製のブログ記事を下書き保存して、プロダクション環境でのみ非表示にしたい場合。
 
 tags:

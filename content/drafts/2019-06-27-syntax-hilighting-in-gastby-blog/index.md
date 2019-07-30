@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "GatsbyJS製ブログ記事内のコードブロックをシンタックスハイライト表示する"
 date: 2019-06-27T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.png
+featuredimage: /images/gatsby-image.svg
 description: GatsbyJSで作ったブログ記事内のコードブロックは、シンタックスに色をつけたい。ファイル名も表示したい。ラインもハイライトしたい。
 
 tags:
