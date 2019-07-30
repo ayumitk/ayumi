@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
