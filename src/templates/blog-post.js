@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby-plugin-intl';
 import { kebabCase } from 'lodash';
+import { DiscussionEmbed } from 'disqus-react';
 
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -95,39 +96,50 @@ class BlogPostTemplate extends Component {
   render() {
     const { data, location } = this.props;
     const post = data.markdownRemark;
+
     const siteTitle = data.site.siteMetadata.title;
+    const { excerpt, html, tableOfContents } = post;
+    const { slug } = post.fields;
+    const {
+      date, title, description, featuredimage,
+    } = post.frontmatter;
+
+    const disqusConfig = {
+      shortname: process.env.GATSBY_DISQUS_NAME,
+      config: { identifier: slug, title },
+    };
 
     return (
       <Layout location={location} title={siteTitle}>
         <div>
           <SEO
-            title={post.frontmatter.title}
-            description={post.frontmatter.description || post.excerpt}
+            title={title}
+            description={description || excerpt}
           />
           <BlogContainer>
 
             <header style={{ marginBottom: '2rem' }}>
-              <Date>{post.frontmatter.date}</Date>
-              <h1>{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.description}</p>
+              <Date>{date}</Date>
+              <h1>{title}</h1>
+              <p>{description}</p>
             </header>
 
             <div style={{ lineHeight: '0' }}>
               <PreviewCompatibleImage
                 imageInfo={{
-                  image: post.frontmatter.featuredimage,
-                  alt: `featured image for post ${post.frontmatter.title}`,
+                  image: featuredimage,
+                  alt: `featured image for post ${title}`,
                 }}
               />
             </div>
 
             <TableOfContents
-              toc={post.tableOfContents}
-              slug={post.fields.slug}
+              toc={tableOfContents}
+              slug={slug}
             />
 
             <PostContentWrapper>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <div dangerouslySetInnerHTML={{ __html: html }} />
             </PostContentWrapper>
 
             <footer>
@@ -139,6 +151,8 @@ class BlogPostTemplate extends Component {
                 </div>
               ) : null}
             </footer>
+
+            <DiscussionEmbed {...disqusConfig} />
 
           </BlogContainer>
         </div>
