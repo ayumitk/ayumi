@@ -11,6 +11,12 @@ const StyledHeader = styled.header`
   background:#FFF;
 `;
 
+const HeaderContainer = styled(Container)`
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+`;
+
 const Brand = styled(Link)`
   text-transform: uppercase;
   font-weight: 600;
@@ -31,10 +37,10 @@ class Header extends Component {
 
     return (
       <StyledHeader>
-        <Container style={{ display: 'flex', padding: '1rem 0' }}>
+        <HeaderContainer>
           <Brand to="/">{author}</Brand>
           <Nav />
-        </Container>
+        </HeaderContainer>
       </StyledHeader>
     );
   }
