@@ -33,7 +33,7 @@ class Index extends Component {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error));
+      .catch(error => alert(error)); // eslint-disable-line
   }
 
   render() {
