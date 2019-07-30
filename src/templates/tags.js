@@ -48,9 +48,7 @@ class TagRoute extends Component {
 
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
-    const tagHeader = `${totalCount} post${
-      totalCount === 1 ? '' : 's'
-    } tagged with “${tag}”`;
+    const tagHeader = `Tag: ${tag} (${totalCount})`;
 
     return (
       <Layout location={location} title={siteTitle}>
@@ -59,25 +57,32 @@ class TagRoute extends Component {
           <Container>
             <h1 style={{ padding: '5rem 0' }}>{tagHeader}</h1>
             <BlogRollGrid>
-              {posts.map(post => (
-                <article key={post.node.fields.slug}>
-                  <Link to={post.node.fields.slug}>
-                    <div className="blog-roll-grid__image">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.node.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.node.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                    <div className="blog-roll-grid__inner">
-                      <h3>{post.node.frontmatter.title}</h3>
-                      <p>{post.node.frontmatter.date}</p>
-                      <p>{post.node.frontmatter.description}</p>
-                    </div>
-                  </Link>
-                </article>
-              ))}
+              {posts.map(({ node }) => {
+                const { slug } = node.fields;
+                const {
+                  date, title, description, featuredimage,
+                } = node.frontmatter;
+
+                return (
+                  <article key={slug}>
+                    <Link to={slug}>
+                      <div className="blog-roll-grid__image">
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                            image: featuredimage,
+                            alt: `featured image thumbnail for post ${title}`,
+                          }}
+                        />
+                      </div>
+                      <div className="blog-roll-grid__inner">
+                        <h3>{title}</h3>
+                        <p>{date}</p>
+                        <p>{description}</p>
+                      </div>
+                    </Link>
+                  </article>
+                );
+              })}
             </BlogRollGrid>
             <Link to="/tags/">Browse all tags</Link>
           </Container>

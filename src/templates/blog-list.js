@@ -86,25 +86,29 @@ class BlogList extends Component {
             <h1 style={{ padding: '5rem 0' }}>Blog</h1>
             <BlogRoll>
               {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug;
+                const { slug } = node.fields;
+                const {
+                  date, title, description, featuredimage,
+                } = node.frontmatter;
+
                 return (
-                  <article key={node.fields.slug}>
+                  <article key={slug}>
                     <div style={{ lineHeight: '0' }}>
                       <PreviewCompatibleImage
                         imageInfo={{
-                          image: node.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${node.frontmatter.title}`,
+                          image: featuredimage,
+                          alt: `featured image thumbnail for post ${title}`,
                         }}
                       />
                     </div>
                     <div style={{ padding: '1.5rem 2rem 3rem 2rem' }}>
                       <h3>
-                        <Link to={node.fields.slug}>
+                        <Link to={slug}>
                           {title}
                         </Link>
                       </h3>
-                      <p>{node.frontmatter.date}</p>
-                      <p>{node.frontmatter.description}</p>
+                      <p>{date}</p>
+                      <p>{description}</p>
                     </div>
                   </article>
                 );
