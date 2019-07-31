@@ -25,7 +25,6 @@ const Date = styled.p`
 const BlogContainer = styled(Container)`
   max-width: 840px;
   padding-top:5rem;
-  padding-bottom:5rem;
   h1{
     margin-bottom:3rem;
   }
@@ -46,13 +45,29 @@ const PostContentWrapper = styled.div`
     border-bottom: solid 1px ${props => props.theme.color.lightGray};
   }
   h3 {
-    color: ${props => props.theme.color.pink};
-    margin-bottom: 1rem;
+    /* color: ${props => props.theme.color.pink}; */
+    margin-top: 6rem;
+  }
+  em{
+    font-weight:700;
+    color: ${props => props.theme.color.black};
+    font-style:normal;
   }
   p,
   blockquote,
   table {
     margin-top: 3rem;
+  }
+  table{
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid hsla(0,0%,0%,0.12);
+    th{
+      color: ${props => props.theme.color.black};
+    }
+    th,td{
+      padding:1rem;
+    }
   }
   blockquote {
     background: rgba(0,0,0,0.05);

@@ -90,12 +90,12 @@ src / serviceWorker.js
 
 これで完成 🙌
 
-私は [Visual Studio Code](https://code.visualstudio.com/) というエディタを使っているので、[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) エクステンションもインストールして使用しています。  
-ルールに沿わないコードには赤い波線が付き、 常に PROBLEMS タブでに怒られつつ、保存時に自動で Lint してくれるように設定しているので、非常に助かります。
+私のエディタは [Visual Studio Code](https://code.visualstudio.com/) なので、[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) エクステンションをインストールして使用しています。  
+ルールに沿わないコードには赤い波線が付き、 常に PROBLEMS タブでに怒られつつ、保存時に自動で Lint してくれるように設定しているので、非常にコーディングが捗りますよ 😉
 
 ---
 
-※最終的なプロジェクトのファイル構成
+📁 最終的なプロジェクトのファイル構成
 
 ```json{2-3}
 my-app/

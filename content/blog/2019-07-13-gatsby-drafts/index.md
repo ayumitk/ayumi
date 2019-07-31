@@ -21,17 +21,16 @@ tags:
 
 こんな感じのイメージ。
 
-上記を踏まえて、どういった方法があるのか探してみたところ、すごくシンプルな方法がありました。
-
-> 参考 :
->
-> - [Writing Drafts in GatsbyJS](https://chaseonsoftware.com/gatsby-drafts/)
-
 | Stage                  | content/blog | content/drafts |
 | ---------------------- | ------------ | -------------- |
 | Local Development      | ✅           | ✅             |
 | Non-Production Netlify | ✅           | ✅             |
 | Production Netlify     | ✅           | ❌             |
+
+上記を踏まえて、どういった方法があるのか探してみたところ、すごくシンプルな方法がありました。
+
+> 参考 :
+> [Writing Drafts in GatsbyJS](https://chaseonsoftware.com/gatsby-drafts/)
 
 プロダクションブランチ(master)では、draft の記事は表示されない。  
 ローカルホストと、プロダクションブランチ(master)以外のブランチ(develop)では、表示される。
@@ -90,13 +89,33 @@ if (process.env.CONTEXT !== "production") {
 
 たったこれだけで完成 🙌
 
-ローカルで gatsby develop を実行してみる。  
+---
+
+## 動作確認
+
+### ローカル環境(Local Development)
+
+まずは、`gatsby develop` を実行し、ローカルサーバで確認してみよう。  
 http://localhost:8000/
 
-Netlify で master ブランチをデプロイしてみよう。  
-https://gatsby-draft.netlify.com/
+記事が３つとも確認できますね。
 
-さらに、develop ブランチも作成して、Netlify でデプロイしてみよう。  
-https://develop--gatsby-draft.netlify.com/
+### Netlify の本番環境(Production Netlify)
+
+続いて、`master` ブランチを GitHub に `push` し、Netlify でデプロイしてみよう。
+
+DEMO : https://gatsby-draft.netlify.com/
+
+記事が二つだけ！
+
+### Netlify の開発環境(Non-Production Netlify)
+
+さらに、`master`ブランチをコピーして`develop` ブランチを作成し、Netlify でブランチデプロイしてみよう。
+
+DEMO : https://develop--gatsby-draft.netlify.com/
+
+こちらも記事が３つとも確認できます。
+
+デモのソースは GitHub から確認できますよ 👍
 
 <a href="https://github.com/ayumitk/gatsby-drafts" target="_blank" class="btn">GitHub からダウンロード</a>

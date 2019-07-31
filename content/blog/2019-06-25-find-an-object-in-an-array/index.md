@@ -99,7 +99,7 @@ console.log(index)
 
 ## some() 条件に合うオブジェクトがあるかないかだけ知りたい時
 
-条件に合うオブジェクトが 1 つでもあれば、 `true` 、無ければ `false` が返る。
+条件に合うオブジェクトが 1 つでもあれば `true` 、無ければ `false` が返る。
 
 ```javascript
 const users = [
