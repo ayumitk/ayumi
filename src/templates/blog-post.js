@@ -58,6 +58,11 @@ const PostContentWrapper = styled.div`
   table {
     margin-top: 3rem;
   }
+  ul{
+    margin-top: 3rem;
+    list-style: disc;
+    padding-left: 2rem;
+  }
   table{
     width: 100%;
     table-layout: fixed;

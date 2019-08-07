@@ -183,3 +183,40 @@ $ git merge --abort
 ```
 $ git reset --hard HEAD
 ```
+
+---
+
+## git pull を取り消したい時
+
+### マージ成功した場合
+
+まずは HEAD の移動履歴を確認する。
+
+```
+$ git reflog
+```
+
+出力：
+
+```
+ba7a7cf (HEAD -> master, origin/master) HEAD@{0}: commit: Add post
+364a066 HEAD@{1}: commit: Add blog post page style
+345029b HEAD@{2}: pull: Merge made by the 'recursive' strategy.
+6709beb HEAD@{3}: pull: Fast-forward
+ed7a97f HEAD@{4}: checkout: moving from master to master
+...
+```
+
+戻りたいところが `HEAD@{1}` だとすると、
+
+```
+$ git reset --hard HEAD@{1}
+```
+
+強制的に HEAD を移動します。
+
+### マージが失敗（コンフリクト）した場合
+
+```
+$ git merge --abort
+```

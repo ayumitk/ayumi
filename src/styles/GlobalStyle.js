@@ -56,10 +56,13 @@ const GlobalStyle = createGlobalStyle`
     background: #f8f8f8;
   }
 
+  ul, ol{
+    list-style: none;
+  }
+
   p, ul, ol, li{
     margin: 0;
     padding: 0;
-    list-style: none;
   }
 
   h1, h2, h3, h4, h5, h6{

@@ -12,7 +12,7 @@ tags:
   - Tips
 ---
 
-React を使ってアプリケーションを作るようになって、配列(Array)を操作することが増えてきました。  
+[React](https://reactjs.org/) を使ってアプリケーションを作るようになって、配列(Array)を操作することが増えました。  
 これを機に、配列の中から特定の要素を持つオブジェクトを探す時のメソッドをまとめておきます。
 
 ※サンプルコードは全て ES2015 のアロー関数(Arrow Function)を使っています。
@@ -34,10 +34,15 @@ const users = [
 
 const targetUser = users.find(friend => friend.age === 20)
 console.log(targetUser)
-
-// => { name: 'Emma', age: 20 },
-// Emma だけが返る、Harry は返らない。
 ```
+
+結果：
+
+```javascript:title=console.log
+{ name: 'Emma', age: 20 }
+```
+
+Emma だけが返る、Harry は返らない。
 
 > 参考 :  
 > [Array.prototype.find() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
@@ -59,13 +64,15 @@ const users = [
 
 const targetUser = users.filter(friend => friend.age === 20)
 console.log(targetUser)
-
-// [
-//  { name: 'Emma',  age: 20 },
-//  { name: 'Harry', age: 20 }
-// ]
-// Emma も Olivia も返る。
 ```
+
+結果：
+
+```javascript:title=console.log
+;[{ name: "Emma", age: 20 }, { name: "Harry", age: 20 }]
+```
+
+Emma も Olivia も返る。
 
 > 参考 :  
 > [Array.prototype.filter() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
@@ -87,10 +94,15 @@ const users = [
 
 const index = users.findIndex(friend => friend.age === age)
 console.log(index)
-
-// => 0
-// Emma の index 0 だけが返る。Harry の index は返らない。
 ```
+
+結果：
+
+```javascript:title=console.log
+0
+```
+
+Emma の index 0 だけが返る。Harry の index は返らない。
 
 > 参考 :  
 > [Array.prototype.findIndex() – JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
@@ -112,8 +124,12 @@ const users = [
 const existing = users.some(friend => friend.age === 20)
 
 console.log(existing)
+```
 
-// => true
+結果：
+
+```javascript:title=console.log
+true
 ```
 
 > 参考 :  

@@ -35,7 +35,7 @@ cd my-app
 
 ## 2. Airbnb の Eslint 関連パッケージをインストール
 
-ターミナルから `devDependencies` に Airbnb の Eslint 関連パッケージをインストールします。
+ターミナルから `devDependencies` に Airbnb の React 用 Eslint 関連パッケージをインストールします。
 
 ```text:title=Terminal
 npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react
@@ -73,7 +73,8 @@ npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react
 }
 ```
 
-ESLint のルールは自分に合わせて追加していきましょう。
+ESLint のルールは自分に合わせて追加していきましょう 👍  
+インターネットで検索すると、いろんな人がおすすめルールを公開しているので参考になります。
 
 > 参考 :  
 > [wesbos/dotfiles: Hey wes what settings do you use? - GitHub](https://github.com/wesbos/dotfiles/blob/master/.eslintrc)
