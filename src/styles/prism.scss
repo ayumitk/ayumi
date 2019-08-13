@@ -158,10 +158,50 @@ pre[class*="language-"] {
 }
 
 .gatsby-code-title,
-.gatsby-highlight {
+.gatsby-code-button-container {
   margin-top: 3rem;
 }
 
-.gatsby-code-title + .gatsby-highlight {
+.gatsby-code-title + .gatsby-code-button-container {
   margin-top: 0;
+}
+
+.gatsby-code-button-container {
+  height: 30px;
+  margin-bottom: -30px;
+  top: 0;
+  display: block;
+  float: right;
+  .gatsby-code-button {
+    line-height: 0;
+    padding: 6px;
+    &::after {
+      font-size: 1.1rem;
+      padding: 0 10px;
+      line-height: 20px;
+      top: -25px;
+      border-radius: 3px;
+      background: #4b5461fd;
+      color: #cbccc6;
+    }
+    svg {
+      fill: #cbccc6;
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &:hover .gatsby-code-button svg {
+    fill: #fff;
+  }
+}
+
+.gatsby-code-button-toaster .gatsby-code-button-toaster-text {
+  background-color: rgba(#ff5851, 0.9);
+  margin: 0;
+  max-width: inherit;
+  padding: 20px;
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  font-family: inherit;
+  border-radius: 0;
 }

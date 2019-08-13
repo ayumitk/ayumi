@@ -52,6 +52,7 @@
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.14.3",
+    "gatsby-remark-code-buttons": "^2.0.1",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
