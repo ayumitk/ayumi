@@ -36,8 +36,16 @@ const PostContentWrapper = styled.div`
     text-decoration:underline;
   }
   hr {
-    margin: 5rem 0;
-    background:none;
+    margin: 5rem auto;
+    display: block;
+    height: 4px;
+    width: 120px;
+    background-color: rgba(33,37,41,0.1);
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 4px;
   }
   h2 {
     margin-bottom: 3rem;

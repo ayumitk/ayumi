@@ -132,6 +132,9 @@ pre[class*="language-"] {
 }
 
 /* optional */
+.gatsby-highlight {
+  clear: both;
+}
 .gatsby-highlight-code-line {
   background-color: #2a3546fd;
   display: block;
