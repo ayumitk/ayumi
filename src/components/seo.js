@@ -4,80 +4,78 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
-  description, lang, meta, title,
+  description, title, image, pathname, article,
 }) {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
+            defaultTitle: title
+            titleTemplate
+            defaultDescription: description
+            siteUrl
+            defaultImage: image
+            twitterUsername
           }
         }
       }
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  // const metaDescription = description || site.siteMetadata.description;
+  const seo = {
+    title: title || site.siteMetadata.defaultTitle,
+    description: description || site.siteMetadata.defaultDescription,
+    image: `${site.siteUrl}${image || site.siteMetadata.defaultImage}`,
+    url: `${site.siteMetadata.siteUrl}${pathname || '/'}`,
+    titleTemplate: site.siteMetadata.titleTemplate,
+    article,
+    twitterUsername: site.siteMetadata.twitterUsername,
+  };
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
+        <meta name="description" content={seo.description} />
+        <meta name="image" content={seo.image} />
+        {seo.url && <meta property="og:url" content={seo.url} />}
+        {(seo.article ? true : null) && (
+          <meta property="og:type" content="article" />
+        )}
+        {seo.title && <meta property="og:title" content={seo.title} />}
+        {seo.description && (
+          <meta property="og:description" content={seo.description} />
+        )}
+        {seo.image && <meta property="og:image" content={seo.image} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        {seo.twitterUsername && (
+          <meta name="twitter:creator" content={seo.twitterUsername} />
+        )}
+        {seo.title && <meta name="twitter:title" content={seo.title} />}
+        {seo.description && (
+          <meta name="twitter:description" content={seo.description} />
+        )}
+        {seo.image && <meta name="twitter:image" content={seo.image} />}
+      </Helmet>
+    </>
   );
 }
 
 SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  description: '',
+  title: null,
+  description: null,
+  image: null,
+  pathname: null,
+  article: false,
 };
 
 SEO.propTypes = {
+  title: PropTypes.string,
   description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  pathname: PropTypes.string,
+  article: PropTypes.bool,
 };
 
 export default SEO;
