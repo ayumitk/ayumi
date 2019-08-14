@@ -4,7 +4,7 @@ import { injectIntl, Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import SEO from '../components/seo';
 import BlogRoll from '../components/BlogRoll';
 
 import { Container } from '../styles/StyledComponents';
