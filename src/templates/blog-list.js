@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, injectIntl } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-// import SEO from '../components/seo';
+import SEO from '../components/seo';
 import Layout from '../components/Layout';
 
 import { Container, BlogRollGrid } from '../styles/StyledComponents';
@@ -84,7 +84,7 @@ class BlogList extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          {/* <SEO title="Blog" /> */}
+          <SEO title={`Blog Page ${currentPage}`} />
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Blog</h1>
 

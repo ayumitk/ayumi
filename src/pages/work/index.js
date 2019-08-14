@@ -3,7 +3,7 @@ import { injectIntl } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
-// import SEO from '../../components/seo';
+import SEO from '../../components/seo';
 
 import { Container } from '../../styles/StyledComponents';
 
@@ -25,7 +25,7 @@ class WorkPage extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          {/* <SEO title="Work" /> */}
+          <SEO title="Work" />
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Work</h1>
             <p>Under Construction</p>

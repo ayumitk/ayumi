@@ -8,7 +8,7 @@ import { DiscussionEmbed } from 'disqus-react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
-// import SEO from '../components/seo';
+import SEO from '../components/seo';
 
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
@@ -182,10 +182,12 @@ class BlogPostTemplate extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          {/* <SEO
+          <SEO
             title={title}
             description={description || excerpt}
-          /> */}
+            article="true"
+            image={featuredImgFluid}
+          />
           <BlogContainer>
 
             <header style={{ marginBottom: '2rem' }}>

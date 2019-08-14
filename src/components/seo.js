@@ -33,6 +33,8 @@ function SEO({
     twitterUsername: site.siteMetadata.twitterUsername,
   };
 
+  // console.log(seo);
+
   return (
     <>
       <Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
