@@ -1,9 +1,12 @@
 const cfg = {
   siteMetadata: {
-    title: 'Ayumi.tk - UI/UX Designer & Developer',
+    title: 'Ayumi.tk',
+    titleTemplate: '%s | Ayumi Takahashi - UI/UX Designer & Developer',
     author: 'Ayumi Takahashi',
     description: 'Hi, I\'m Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.',
-    siteUrl: 'https://ayumi.tk/',
+    url: 'https://www.ayumi.tk/',
+    image: '/images/default.png',
+    twitterUsername: '@ayumitk__',
     social: [
       {
         name: 'Twitter',

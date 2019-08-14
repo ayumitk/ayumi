@@ -4,7 +4,7 @@ import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
+// import SEO from '../components/seo';
 
 import { Container, BlogRollGrid } from '../styles/StyledComponents';
 
@@ -53,7 +53,7 @@ class TagRoute extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          <SEO title={tagHeader} />
+          {/* <SEO title={tagHeader} /> */}
           <Container>
             <h1 style={{ padding: '5rem 0' }}>{tagHeader}</h1>
             <BlogRollGrid>

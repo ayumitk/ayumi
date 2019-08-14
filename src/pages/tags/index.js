@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { Link, injectIntl } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
+// import SEO from '../../components/seo';
 
 import { Container } from '../../styles/StyledComponents';
 
@@ -32,7 +32,7 @@ class TagsPage extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          <SEO title="Tags" />
+          {/* <SEO title="Tags" /> */}
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Tags</h1>
             <ul>

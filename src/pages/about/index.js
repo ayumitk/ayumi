@@ -3,7 +3,7 @@ import { injectIntl } from 'gatsby-plugin-intl';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
+// import SEO from '../../components/seo';
 
 import { Container } from '../../styles/StyledComponents';
 
@@ -25,7 +25,7 @@ class AboutPage extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          <SEO title="About Me" />
+          {/* <SEO title="About Me" /> */}
           <Container>
             <h1 style={{ padding: '5rem 0' }}>About Me</h1>
             <p>Under Construction</p>

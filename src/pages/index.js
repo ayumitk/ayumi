@@ -4,7 +4,7 @@ import { injectIntl, Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 import BlogRoll from '../components/BlogRoll';
 
 import { Container } from '../styles/StyledComponents';
@@ -28,7 +28,7 @@ class IndexPage extends Component {
     return (
       <Layout location={location} title={siteTitle}>
         <div>
-          <SEO title="All posts" />
+          <SEO title="Home" />
           <Container>
             <h1 style={{ padding: '7rem 0' }}>
               Hello, I&apos;m Ayumi,
