@@ -127,6 +127,7 @@ class Nav extends Component {
           className={isActive ? 'active' : ''}
           onClick={this.toggleHamburger}
           type="button"
+          aria-label="Navigation Toggle Button"
         >
           <span />
         </HamburgerButton>
