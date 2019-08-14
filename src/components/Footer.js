@@ -102,7 +102,7 @@ class Footer extends Component {
           </FooterNav>
           <SocialLink>
             {social.map(item => (
-              <a href={item.url} target="_blank" rel="noopener noreferrer" key={item.name}>{item.icon}</a>
+              <a href={item.url} target="_blank" rel="noopener noreferrer" key={item.name} aria-label={item.name}>{item.icon}</a>
             ))}
           </SocialLink>
           <MailLink>
