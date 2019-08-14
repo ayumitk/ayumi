@@ -23,7 +23,6 @@ function SEO({
     `,
   );
 
-  // const metaDescription = description || site.siteMetadata.description;
   const seo = {
     title: title || site.siteMetadata.defaultTitle,
     description: description || site.siteMetadata.defaultDescription,

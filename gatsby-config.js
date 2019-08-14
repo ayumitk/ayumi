@@ -4,7 +4,7 @@ const cfg = {
     titleTemplate: '%s | Ayumi Takahashi - UI/UX Designer & Developer',
     author: 'Ayumi Takahashi',
     description: 'Hi, I\'m Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.',
-    siteUrl: 'https://www.ayumi.tk/',
+    siteUrl: 'https://gatsby.ayumi.tk/',
     image: '/images/default.png',
     twitterUsername: '@ayumitk__',
     social: [
