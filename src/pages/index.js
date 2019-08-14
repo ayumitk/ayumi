@@ -27,9 +27,9 @@ class IndexPage extends Component {
     const siteTitle = data.site.siteMetadata.title;
 
     return (
-      <Layout location={location} title={siteTitle} lang={intl.locale}>
+      <Layout location={location} title={siteTitle}>
         <div>
-          <SEO title="Home" />
+          <SEO title="Home" lang={intl.locale} />
           <Container>
             <h1 style={{ padding: '7rem 0' }}>
               Hello, I&apos;m Ayumi,
