@@ -154,6 +154,7 @@ class BlogPostTemplate extends Component {
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
           tags: PropTypes.array.isRequired,
+          featuredimage: PropTypes.object.isRequired,
         }),
       }),
     }).isRequired,

@@ -20,7 +20,7 @@ class BlogRoll extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
-                // featuredimage: PropTypes.string,
+                featuredimage: PropTypes.object.isRequired,
               }),
             }),
           }).isRequired,
@@ -39,12 +39,10 @@ class BlogRoll extends Component {
           {posts.map(({ node }) => {
             const { slug } = node.fields;
             const {
-              date, title, description, featuredimage,
+              date, title, description,
             } = node.frontmatter;
 
             const featuredImgFluid = node.frontmatter.featuredimage.childImageSharp.fluid;
-
-            console.log(featuredimage);
 
             return (
               <article key={slug}>

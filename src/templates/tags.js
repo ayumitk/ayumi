@@ -28,7 +28,7 @@ class TagRoute extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
-                // featuredimage: PropTypes.string,
+                featuredimage: PropTypes.object.isRequired,
               }),
             }),
           }).isRequired,
