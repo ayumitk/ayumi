@@ -19,14 +19,15 @@ class IndexPage extends Component {
       }),
     }).isRequired,
     location: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired,
   }
 
   render() {
-    const { data, location } = this.props;
+    const { data, location, intl } = this.props;
     const siteTitle = data.site.siteMetadata.title;
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title={siteTitle} lang={intl.locale}>
         <div>
           <SEO title="Home" />
           <Container>
