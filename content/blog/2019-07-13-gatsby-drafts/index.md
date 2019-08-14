@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Gatsby＋Netlifyのブログに下書き機能を追加したい"
 date: 2019-07-13T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.svg
+featuredimage: ./featuredimage.png
 description: Gatsbyのブログ記事を下書き保存し、デベロップメント環境では表示、プロダクション環境では非表示にしたい場合
 
 tags:

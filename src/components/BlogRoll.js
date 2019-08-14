@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import Img from 'gatsby-image';
 
 import { BlogRollGrid } from '../styles/StyledComponents';
 
@@ -20,7 +20,7 @@ class BlogRoll extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
-                featuredimage: PropTypes.string,
+                // featuredimage: PropTypes.string,
               }),
             }),
           }).isRequired,
@@ -42,16 +42,15 @@ class BlogRoll extends Component {
               date, title, description, featuredimage,
             } = node.frontmatter;
 
+            const featuredImgFluid = node.frontmatter.featuredimage.childImageSharp.fluid;
+
+            console.log(featuredimage);
+
             return (
               <article key={slug}>
                 <Link to={slug}>
                   <div className="blog-roll-grid__image">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: featuredimage,
-                        alt: `featured image thumbnail for post ${title}`,
-                      }}
-                    />
+                    <Img fluid={featuredImgFluid} />
                   </div>
                   <div className="blog-roll-grid__inner">
                     <h3>{title}</h3>
@@ -85,7 +84,13 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 title
                 description
-                featuredimage
+                featuredimage{
+                  childImageSharp {
+                    fluid(maxWidth: 640) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }

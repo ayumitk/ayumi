@@ -6,9 +6,9 @@ import { kebabCase } from 'lodash';
 import { DiscussionEmbed } from 'disqus-react';
 
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
@@ -154,7 +154,6 @@ class BlogPostTemplate extends Component {
           title: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
           tags: PropTypes.array.isRequired,
-          featuredimage: PropTypes.string,
         }),
       }),
     }).isRequired,
@@ -165,11 +164,13 @@ class BlogPostTemplate extends Component {
     const { data, location } = this.props;
     const post = data.markdownRemark;
 
+    const featuredImgFluid = post.frontmatter.featuredimage.childImageSharp.fluid;
+
     const siteTitle = data.site.siteMetadata.title;
     const { excerpt, html, tableOfContents } = post;
     const { slug } = post.fields;
     const {
-      date, title, description, featuredimage, tags,
+      date, title, description, tags,
     } = post.frontmatter;
 
     const disqusConfig = {
@@ -193,12 +194,7 @@ class BlogPostTemplate extends Component {
             </header>
 
             <div style={{ lineHeight: '0' }}>
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: featuredimage,
-                  alt: `featured image for post ${title}`,
-                }}
-              />
+              <Img fluid={featuredImgFluid} />
             </div>
 
             <TableOfContents
@@ -254,7 +250,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
-        featuredimage
+        featuredimage{
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

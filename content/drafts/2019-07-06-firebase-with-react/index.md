@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】Firebaseを使ってみる"
 date: 2019-07-06T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/firebase-image.svg
+featuredimage: ./featuredimage.png
 description: Firebaseを使ってみる
 
 tags:

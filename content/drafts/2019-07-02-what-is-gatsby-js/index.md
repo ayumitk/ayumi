@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "GatsbyJSってなに？"
 date: 2019-07-02T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.svg
+featuredimage: ./featuredimage.png
 description: そもそもGatsbyJSって何だろう？
 
 tags:

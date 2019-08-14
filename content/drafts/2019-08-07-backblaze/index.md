@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "DropboxをやめてBackblazeにした話"
 date: 2019-08-07T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.svg
+featuredimage: ./featuredimage.png
 description: Backblaze
 
 tags:

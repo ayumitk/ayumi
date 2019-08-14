@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: ".envファイルをリポジトリにはアップしたくない"
 date: 2019-08-06T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.svg
+featuredimage: ./featuredimage.png
 description: .env ファイルに変数を書き込みたいけど、github リポジトリにはアップしたくない場合
 
 tags:

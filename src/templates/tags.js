@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 import { Container, BlogRollGrid } from '../styles/StyledComponents';
 
@@ -28,7 +28,7 @@ class TagRoute extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
-                featuredimage: PropTypes.string,
+                // featuredimage: PropTypes.string,
               }),
             }),
           }).isRequired,
@@ -60,19 +60,16 @@ class TagRoute extends Component {
               {posts.map(({ node }) => {
                 const { slug } = node.fields;
                 const {
-                  date, title, description, featuredimage,
+                  date, title, description,
                 } = node.frontmatter;
+
+                const featuredImgFluid = node.frontmatter.featuredimage.childImageSharp.fluid;
 
                 return (
                   <article key={slug}>
                     <Link to={slug}>
                       <div className="blog-roll-grid__image">
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: featuredimage,
-                            alt: `featured image thumbnail for post ${title}`,
-                          }}
-                        />
+                        <Img fluid={featuredImgFluid} />
                       </div>
                       <div className="blog-roll-grid__inner">
                         <h3>{title}</h3>
@@ -116,7 +113,13 @@ export const tagPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            featuredimage
+            featuredimage{
+              childImageSharp {
+                fluid(maxWidth: 640) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "VSCodeでよく使うショートカット"
 date: 2019-08-08T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/vscode-image.svg
+featuredimage: ./featuredimage.png
 description: 忘れないようにまとめ
 
 tags:

@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Gatsby製のブログに目次を追加する"
 date: 2019-07-11T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/gatsby-image.svg
+featuredimage: ./featuredimage.png
 description: プラグインなしで簡単に追加できます
 
 tags:

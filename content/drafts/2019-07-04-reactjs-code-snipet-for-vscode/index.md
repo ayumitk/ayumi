@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【React】便利なスニペットVS Code"
 date: 2019-07-04T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/vscode-image.svg
+featuredimage: ./featuredimage.png
 description: Reactコードを書く上でおすすめ。
 
 tags:

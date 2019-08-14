@@ -3,10 +3,9 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Link, injectIntl } from 'gatsby-plugin-intl';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/Layout';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-
 
 import { Container, BlogRollGrid } from '../styles/StyledComponents';
 
@@ -58,7 +57,7 @@ class BlogList extends Component {
                 date: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 description: PropTypes.string.isRequired,
-                featuredimage: PropTypes.string,
+                // featuredimage: PropTypes.string,
               }),
             }),
           }).isRequired,
@@ -93,19 +92,16 @@ class BlogList extends Component {
               {posts.map(({ node }) => {
                 const { slug } = node.fields;
                 const {
-                  date, title, description, featuredimage,
+                  date, title, description,
                 } = node.frontmatter;
+
+                const featuredImgFluid = node.frontmatter.featuredimage.childImageSharp.fluid;
 
                 return (
                   <article key={slug}>
                     <Link to={slug}>
                       <div className="blog-roll-grid__image">
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: featuredimage,
-                            alt: `featured image thumbnail for post ${title}`,
-                          }}
-                        />
+                        <Img fluid={featuredImgFluid} />
                       </div>
                       <div className="blog-roll-grid__inner">
                         <h3>{title}</h3>
@@ -173,7 +169,13 @@ export const blogListQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             description
-            featuredimage
+            featuredimage{
+              childImageSharp {
+                fluid(maxWidth: 640) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

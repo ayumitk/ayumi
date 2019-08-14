@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "【Design】サービスロゴを探すなら Worldvectorlogo で"
 date: 2019-07-03T15:04:10.000Z
 featuredpost: false
-featuredimage: /images/design-image.svg
+featuredimage: ./featuredimage.png
 description: このTipsのアイキャッチ画像もこのサイトからダウンロードして使ってます。
 
 tags:
