@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
 import { injectIntl, Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 
@@ -11,23 +10,14 @@ import { Container } from '../styles/StyledComponents';
 
 class IndexPage extends Component {
   static propTypes = {
-    data: PropTypes.shape({
-      site: PropTypes.shape({
-        siteMetadata: PropTypes.shape({
-          title: PropTypes.string,
-        }),
-      }),
-    }).isRequired,
-    location: PropTypes.object.isRequired,
     intl: PropTypes.object.isRequired,
   }
 
   render() {
-    const { data, location, intl } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
+    const { intl } = this.props;
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <div>
           <SEO title="Home" lang={intl.locale} />
           <Container>
@@ -51,13 +41,3 @@ class IndexPage extends Component {
 }
 
 export default injectIntl(IndexPage);
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

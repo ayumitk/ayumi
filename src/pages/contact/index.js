@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { injectIntl, FormattedMessage, navigate } from 'gatsby-plugin-intl';
+import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 
@@ -14,6 +15,10 @@ function encode(data) {
 }
 
 class Index extends Component {
+  static propTypes = {
+    intl: PropTypes.object.isRequired,
+  }
+
   state = {
     isValidated: false,
   }
@@ -38,10 +43,12 @@ class Index extends Component {
   }
 
   render() {
+    const { intl } = this.props;
+
     return (
       <Layout>
         <div>
-          <SEO title="Contact" />
+          <SEO title="Contact" lang={intl.locale} />
           <Container>
             <h1 style={{ padding: '5rem 0' }}>Contact</h1>
             <form
