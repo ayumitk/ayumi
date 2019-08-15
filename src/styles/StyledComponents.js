@@ -74,8 +74,8 @@ const Button = styled.button`
 
 const BlogRollGrid = styled.div`
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
   @media (max-width: 991.98px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
