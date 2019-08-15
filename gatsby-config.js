@@ -5,7 +5,7 @@ const cfg = {
     author: 'Ayumi Takahashi',
     description: 'Hi, I\'m Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.',
     siteUrl: 'https://gatsby.ayumi.tk/',
-    image: '/images/default.png',
+    image: 'content/assets/og-image.png',
     twitterUsername: '@ayumitk__',
     social: [
       {
@@ -151,11 +151,11 @@ const cfg = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter Blog',
-        short_name: 'GatsbyJS',
+        name: 'Ayumi Takahashi - UI/UX Designer & Developer',
+        short_name: 'Ayumi.tk',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#663399',
+        background_color: '#f8f8f8',
+        theme_color: '#ff5851',
         display: 'minimal-ui',
         icon: 'content/assets/gatsby-icon.png',
       },

@@ -46,7 +46,6 @@ function SEO({
         titleTemplate={seo.titleTemplate}
       >
         <meta name="description" content={seo.description} />
-        <meta name="theme-color" content="#f8f8f8" />
         <meta name="image" content={seo.image} />
 
         {/* meta og */}
