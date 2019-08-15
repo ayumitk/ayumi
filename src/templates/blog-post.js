@@ -185,7 +185,7 @@ class BlogPostTemplate extends Component {
           <SEO
             title={title}
             description={description || excerpt}
-            article="true"
+            article
             image={featuredImgFluid}
           />
           <BlogContainer>
