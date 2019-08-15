@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
+
 
 function SEO({
   description, title, image, pathname, article, lang,
@@ -45,7 +46,36 @@ function SEO({
         titleTemplate={seo.titleTemplate}
       >
         <meta name="description" content={seo.description} />
+        <meta name="theme-color" content="#f8f8f8" />
         <meta name="image" content={seo.image} />
+
+        {/* favicon */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          sizes="16x16"
+        />
+
+        <link
+          rel="mask-icon"
+          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          color="#ff5851"
+        />
+
+        {/* meta og */}
+        <meta property="og:type" content="business.business" />
         {seo.url && <meta property="og:url" content={seo.url} />}
         {(seo.article ? true : null) && (
           <meta property="og:type" content="article" />
@@ -55,6 +85,8 @@ function SEO({
           <meta property="og:description" content={seo.description} />
         )}
         {seo.image && <meta property="og:image" content={seo.image} />}
+
+        {/* meta twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         {seo.twitterUsername && (
           <meta name="twitter:creator" content={seo.twitterUsername} />
@@ -64,6 +96,7 @@ function SEO({
           <meta name="twitter:description" content={seo.description} />
         )}
         {seo.image && <meta name="twitter:image" content={seo.image} />}
+
       </Helmet>
     </>
   );

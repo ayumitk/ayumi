@@ -24,7 +24,7 @@ class IndexPage extends Component {
             <h1 style={{ padding: '7rem 0' }}>
               Hello, I&apos;m Ayumi,
               <br />
-              a UI/UX Designer & Front-end Developer
+              a UI/UX Designer & Developer
               <br />
               with 10+ years of experience
               <br />
