@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby-plugin-intl';
 import { kebabCase } from 'lodash';
 import { DiscussionEmbed } from 'disqus-react';
-
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import Bio from '../components/Bio';
 
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
@@ -36,7 +36,7 @@ const PostContentWrapper = styled.div`
     text-decoration:underline;
   }
   hr {
-    margin: 5rem auto;
+    margin: 7rem auto;
     display: block;
     height: 4px;
     width: 120px;
@@ -220,6 +220,8 @@ class BlogPostTemplate extends Component {
                 ) : null}
               </TagList>
             </footer>
+
+            <Bio />
 
             <DiscussionEmbed {...disqusConfig} />
 
