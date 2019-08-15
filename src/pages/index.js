@@ -21,16 +21,22 @@ class IndexPage extends Component {
         <div>
           <SEO title="Home" lang={intl.locale} />
           <Container>
-            <h1 style={{ padding: '7rem 0' }}>
-              Hello.
-              <br />
-              I am Ayumi,
-              <br />
-              UI/UX Designer & Developer
-              <br />
-              with 10+ years of experience
-              <br />
-              based in Vancouver, Canada
+            <h1 style={{ padding: '7rem 0', textAlign: 'center' }}>
+              <div style={{
+                fontSize: '10rem', lineHeight: '1', marginBottom: '2.5rem', color: '#ff5851', letterSpacing: '-0.25rem',
+              }}
+              >
+                Hello.
+                <br />
+                I am Ayumi,
+              </div>
+              <div style={{ fontSize: '3rem' }}>
+                a UI/UX Designer & Developer
+                <br />
+                with 10+ years of experience
+                <br />
+                based in Vancouver, Canada.
+              </div>
             </h1>
             <h2>Latest Tips</h2>
             <BlogRoll />
