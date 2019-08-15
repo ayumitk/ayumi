@@ -49,31 +49,6 @@ function SEO({
         <meta name="theme-color" content="#f8f8f8" />
         <meta name="image" content={seo.image} />
 
-        {/* favicon */}
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
-          sizes="16x16"
-        />
-
-        <link
-          rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff5851"
-        />
-
         {/* meta og */}
         <meta property="og:type" content="business.business" />
         {seo.url && <meta property="og:url" content={seo.url} />}
