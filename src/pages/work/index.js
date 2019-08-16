@@ -6,6 +6,8 @@ import SEO from '../../components/seo';
 
 import { Container, PageTitle } from '../../styles/StyledComponents';
 
+import WorkRoll from '../../components/WorkRoll';
+
 class WorkPage extends Component {
   static propTypes = {
     intl: PropTypes.object.isRequired,
@@ -20,7 +22,7 @@ class WorkPage extends Component {
           <SEO title="Work" lang={intl.locale} />
           <Container>
             <PageTitle>Work</PageTitle>
-            <p>Under Construction</p>
+            <WorkRoll />
           </Container>
         </>
       </Layout>

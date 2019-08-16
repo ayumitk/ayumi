@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import BlogRoll from '../components/BlogRoll';
+import WorkRoll from '../components/WorkRoll';
 
 import { Container } from '../styles/StyledComponents';
 
@@ -120,6 +121,11 @@ class IndexPage extends Component {
             <BlogRoll />
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
               <StyledLink to="/blog/"><FormattedMessage id="read_more" /></StyledLink>
+            </div>
+            <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Work</h2>
+            <WorkRoll />
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+              <StyledLink to="/work/"><FormattedMessage id="read_more" /></StyledLink>
             </div>
           </Container>
         </>

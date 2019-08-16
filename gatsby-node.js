@@ -94,6 +94,22 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Work pages:
+  const projects = [59221537, 59218487, 59170599, 59169911, 59135529];
+
+  // Make work pages
+  projects.forEach((project) => {
+    const projectPath = `/work/${_.kebabCase(project)}/`;
+
+    createPage({
+      path: projectPath,
+      component: path.resolve('src/templates/work-project.js'),
+      context: {
+        project,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
