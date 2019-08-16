@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql, withPrefix } from 'gatsby';
-
+import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
   description, title, image, pathname, article, lang,
@@ -12,9 +11,14 @@ function SEO({
       query {
         site {
           siteMetadata {
-            defaultTitle: title
-            titleTemplate
-            defaultDescription: description
+            titleIntl{
+              en
+              ja
+            }
+            descriptionIntl{
+              en
+              ja
+            }
             siteUrl
             defaultImage: image
             twitterUsername
@@ -25,11 +29,11 @@ function SEO({
   );
 
   const seo = {
-    title: title || site.siteMetadata.defaultTitle,
-    description: description || site.siteMetadata.defaultDescription,
+    title,
+    titleTemplate: `%s | ${(lang === 'en') ? site.siteMetadata.titleIntl.en : site.siteMetadata.titleIntl.ja}`,
+    description: description || ((lang === 'en') ? site.siteMetadata.descriptionIntl.en : site.siteMetadata.descriptionIntl.ja),
     image: `${site.siteUrl}${image || site.siteMetadata.defaultImage}`,
     url: `${site.siteMetadata.siteUrl}${pathname || '/'}`,
-    titleTemplate: site.siteMetadata.titleTemplate,
     article,
     twitterUsername: site.siteMetadata.twitterUsername,
   };

@@ -6,7 +6,6 @@
   "skill": {
     "design": {
       "title": "UI/UX Design",
-      "description": "I value simple content structure, clean design patterns, and thoughtful interactions.",
       "what-i-do": {
         "title": "Things I enjoy designing:",
         "list": "UX, UI, Web, Mobile, Apps, Branding, Logos"
@@ -18,20 +17,17 @@
     },
     "dev": {
       "title": "Front-end Dev",
-      "description": "I tend to code things from scratch, and enjoy bringing ideas to life in the browser.",
       "languages": {
         "title": "Languages I speak:",
-        "list": "HTML, CSS/Sass, JavaScript"
+        "list": "HTML, CSS, JavaScript"
       },
       "tools": {
         "title": "Dev Tools:",
-        "list": "VS Code, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby"
+        "list": "VSCode, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby"
       }
     }
   },
   "read_more": "Read More",
-  "keep_reading": "Keep Reading →",
-  "not_found": "You just hit a route that doesn't exist... the sadness.",
   "contact": {
     "name": "Your Name",
     "email": "Email",

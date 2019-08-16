@@ -6,7 +6,6 @@
   "skill": {
     "design": {
       "title": "UI/UXデザイン",
-      "description": "I value simple content structure, clean design patterns, and thoughtful interactions.",
       "what-i-do": {
         "title": "内容:",
         "list": "UX, UI, Web/モバイルデザイン, Appデザイン, ブランディング, ロゴ制作"
@@ -18,20 +17,17 @@
     },
     "dev": {
       "title": "フロントエンド開発",
-      "description": "I tend to code things from scratch, and enjoy bringing ideas to life in the browser.",
       "languages": {
         "title": "言語:",
-        "list": "HTML, CSS/Sass, JavaScript"
+        "list": "HTML, CSS, JavaScript"
       },
       "tools": {
         "title": "ツール:",
-        "list": "VS Code, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby"
+        "list": "VSCode, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby"
       }
     }
   },
   "read_more": "もっと見る",
-  "keep_reading": "続きを読む →",
-  "not_found": "お探しのページは見つかりませんでした",
   "contact": {
     "name": "お名前",
     "email": "Eメール",

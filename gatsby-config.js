@@ -1,10 +1,21 @@
 const cfg = {
   siteMetadata: {
-    title: 'Ayumi.tk',
-    titleTemplate: '%s | Ayumi Takahashi - UI/UX Designer & Developer',
+    title: 'Ayumi Takahashi - UI/UX Designer & Developer',
     author: 'Ayumi Takahashi',
-    description: 'Hi, I\'m Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.',
-    siteUrl: 'https://gatsby.ayumi.tk/',
+    description: 'Hello, I am Ayumi, a UI/UX Designer & Developer Based in Vancouver, Canada.',
+    titleIntl: {
+      en: 'Ayumi Takahashi - UI/UX Designer & Developer',
+      ja: '高橋あゆみ - UI/UXデザイナー&デベロッパー',
+    },
+    authorIntl: {
+      en: 'Ayumi Takahashi',
+      ja: '高橋あゆみ',
+    },
+    descriptionIntl: {
+      en: 'UI/UX Designer & Developer Based in Vancouver, Canada.',
+      ja: 'カナダ、バンクーバーに住むUI/UXデザイナー&デベロッパー。2020年はノマドの旅に出ようかな',
+    },
+    siteUrl: 'https://www.ayumi.tk/',
     image: 'content/assets/og-image.png',
     twitterUsername: '@ayumitk__',
     social: [

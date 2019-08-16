@@ -1,56 +1,75 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { rhythm } from '../utils/typography';
+const BioContainer = styled.div`
+  display:flex;
+  p{
+    margin-left: 1rem;
+  }
+`;
 
-const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
+function Bio({
+  lang,
+}) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        site {
+          siteMetadata {
+            authorIntl{
+              en
+              ja
+            }
+            descriptionIntl{
+              en
+              ja
+            }
           }
         }
       }
-      site {
-        siteMetadata {
-          author
-          twitterUsername
-        }
-      }
-    }
-  `);
+    `,
+  );
 
-  const { author, twitterUsername } = data.site.siteMetadata;
+  const bio = {
+    avatar: data.file.childImageSharp.fixed,
+    author: `${(lang === 'en') ? data.site.siteMetadata.authorIntl.en : data.site.siteMetadata.authorIntl.ja}`,
+    description: ((lang === 'en') ? data.site.siteMetadata.descriptionIntl.en : data.site.siteMetadata.descriptionIntl.ja),
+  };
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <BioContainer>
       <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: '100%',
-        }}
+        fixed={bio.avatar}
+        alt={bio.author}
         imgStyle={{
           borderRadius: '50%',
         }}
       />
       <p>
-        高橋あゆみ
+        <strong>{bio.author}</strong>
         <br />
-        カナダ、バンクーバーに住む UI/UXデザイナー&デベロッパー。2020年はノマドの旅に出ようかな。
+        <span>{bio.description}</span>
       </p>
-    </div>
+    </BioContainer>
   );
+}
+
+Bio.defaultProps = {
+  lang: 'en',
+};
+
+Bio.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default Bio;

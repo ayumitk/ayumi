@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby-plugin-intl';
+import { injectIntl, Link } from 'gatsby-plugin-intl';
 import { kebabCase } from 'lodash';
 import { DiscussionEmbed } from 'disqus-react';
 import styled from 'styled-components';
@@ -173,6 +173,7 @@ const Description = styled.p`
 
 class BlogPostTemplate extends Component {
   static propTypes = {
+    intl: PropTypes.object.isRequired,
     data: PropTypes.shape({
       site: PropTypes.shape({
         siteMetadata: PropTypes.shape({
@@ -201,13 +202,14 @@ class BlogPostTemplate extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, intl } = this.props;
     const post = data.markdownRemark;
 
     const featuredImgFluid = post.frontmatter.featuredimage.childImageSharp.fluid;
 
-    const { siteUrl } = data.site.siteMetadata;
-    const { twitterUsername } = data.site.siteMetadata;
+    const {
+      siteUrl, twitterUsername,
+    } = data.site.siteMetadata;
 
     const { excerpt, html, tableOfContents } = post;
     const { slug } = post.fields;
@@ -228,6 +230,7 @@ class BlogPostTemplate extends Component {
             description={description || excerpt}
             article
             image={featuredImgFluid}
+            lang={intl.locale}
           />
           <BlogContainer>
 
@@ -273,7 +276,7 @@ class BlogPostTemplate extends Component {
                 tags={tags}
               />
 
-              <Bio />
+              <Bio lang={intl.locale} />
             </footer>
 
             <DiscussionEmbed {...disqusConfig} />
@@ -285,7 +288,7 @@ class BlogPostTemplate extends Component {
   }
 }
 
-export default BlogPostTemplate;
+export default injectIntl(BlogPostTemplate);
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -293,6 +296,14 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         twitterUsername
+        authorIntl{
+          en
+          ja
+        }
+        descriptionIntl{
+          en
+          ja
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

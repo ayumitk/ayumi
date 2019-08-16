@@ -4,18 +4,13 @@ import { Link } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
-// import SEO from '../components/seo';
+import SEO from '../components/seo';
 
 import { Container, BlogRollGrid, PageTitle } from '../styles/StyledComponents';
 
 class TagRoute extends Component {
   static propTypes = {
     data: PropTypes.shape({
-      site: PropTypes.shape({
-        siteMetadata: PropTypes.shape({
-          title: PropTypes.string,
-        }),
-      }),
       allMarkdownRemark: PropTypes.shape({
         totalCount: PropTypes.number.isRequired,
         edges: PropTypes.arrayOf(
@@ -35,25 +30,23 @@ class TagRoute extends Component {
         ),
       }),
     }).isRequired,
-    location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
       tag: PropTypes.string.isRequired,
     }).isRequired,
   }
 
   render() {
-    const { data, location, pageContext } = this.props;
+    const { data, pageContext } = this.props;
     const posts = data.allMarkdownRemark.edges;
-    const siteTitle = data.site.siteMetadata.title;
 
     const { tag } = pageContext;
     const { totalCount } = data.allMarkdownRemark;
     const tagHeader = `Tag: ${tag} (${totalCount})`;
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <>
-          {/* <SEO title={tagHeader} /> */}
+          <SEO title={tagHeader} />
           <Container>
             <PageTitle>{tagHeader}</PageTitle>
             <BlogRollGrid>
@@ -93,11 +86,6 @@ export default TagRoute;
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }

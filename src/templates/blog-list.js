@@ -41,11 +41,6 @@ const Pagination = styled.ul`
 class BlogList extends Component {
   static propTypes = {
     data: PropTypes.shape({
-      site: PropTypes.shape({
-        siteMetadata: PropTypes.shape({
-          title: PropTypes.string,
-        }),
-      }),
       allMarkdownRemark: PropTypes.shape({
         edges: PropTypes.arrayOf(
           PropTypes.shape({
@@ -64,7 +59,6 @@ class BlogList extends Component {
         ),
       }),
     }).isRequired,
-    location: PropTypes.object.isRequired,
     pageContext: PropTypes.shape({
       currentPage: PropTypes.number.isRequired,
       numPages: PropTypes.number.isRequired,
@@ -72,9 +66,8 @@ class BlogList extends Component {
   }
 
   render() {
-    const { data, location, pageContext } = this.props;
+    const { data, pageContext } = this.props;
     const posts = data.allMarkdownRemark.edges;
-    const siteTitle = data.site.siteMetadata.title;
     const { currentPage, numPages } = pageContext;
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
@@ -82,7 +75,7 @@ class BlogList extends Component {
     const nextPage = (currentPage + 1).toString();
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <>
           <SEO title={`Blog Page ${currentPage}`} />
           <Container>
@@ -150,11 +143,6 @@ export default injectIntl(BlogList);
 
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit

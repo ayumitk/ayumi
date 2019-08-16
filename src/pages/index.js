@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { injectIntl, Link } from 'gatsby-plugin-intl';
+import { injectIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -98,28 +98,28 @@ class IndexPage extends Component {
           <SkillSet>
             <div style={{ background: '#ff5851', color: '#FFF' }}>
               <div style={{ marginLeft: 'auto' }}>
-                <h2>UI/UX Design</h2>
-                <h3>Things I enjoy designing:</h3>
-                <p>UX, UI, Web, Mobile, Apps, Branding, Logos</p>
-                <h3>Design Tools:</h3>
-                <p>Sketch, Photoshop, Illustrator, Adobe DX, Pen & Paper, Invision, Zeplin</p>
+                <h2><FormattedMessage id="skill.design.title" /></h2>
+                <h3><FormattedMessage id="skill.design.what-i-do.title" /></h3>
+                <p><FormattedMessage id="skill.design.what-i-do.list" /></p>
+                <h3><FormattedMessage id="skill.design.tools.title" /></h3>
+                <p><FormattedMessage id="skill.design.tools.list" /></p>
               </div>
             </div>
             <div style={{ background: '#1c1b20', color: '#ababab' }}>
               <div style={{ marginRight: 'auto' }}>
-                <h2 style={{ color: '#fff' }}>Front-end Dev</h2>
-                <h3 style={{ color: '#fff' }}>Languages I speak:</h3>
-                <p>HTML, CSS/Sass, JavaScript</p>
-                <h3 style={{ color: '#fff' }}>Dev Tools:</h3>
-                <p>Visual Studio Code, Bootstrap, React, Gulp, Webpack, npm, Git, Wordpress, Gatsby</p>
+                <h2 style={{ color: '#fff' }}><FormattedMessage id="skill.dev.title" /></h2>
+                <h3 style={{ color: '#fff' }}><FormattedMessage id="skill.dev.languages.title" /></h3>
+                <p><FormattedMessage id="skill.dev.languages.list" /></p>
+                <h3 style={{ color: '#fff' }}><FormattedMessage id="skill.dev.tools.title" /></h3>
+                <p><FormattedMessage id="skill.dev.tools.list" /></p>
               </div>
             </div>
           </SkillSet>
           <Container>
-            <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Latest Tips</h2>
+            <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Blog</h2>
             <BlogRoll />
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-              <StyledLink to="/blog/">See More</StyledLink>
+              <StyledLink to="/blog/"><FormattedMessage id="read_more" /></StyledLink>
             </div>
           </Container>
         </>
