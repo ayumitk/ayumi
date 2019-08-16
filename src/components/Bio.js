@@ -42,7 +42,7 @@ function Bio({
 
   const bio = {
     avatar: data.file.childImageSharp.fixed,
-    author: `${(lang === 'en') ? data.site.siteMetadata.authorIntl.en : data.site.siteMetadata.authorIntl.ja}`,
+    author: (lang === 'en') ? data.site.siteMetadata.authorIntl.en : data.site.siteMetadata.authorIntl.ja,
     description: ((lang === 'en') ? data.site.siteMetadata.descriptionIntl.en : data.site.siteMetadata.descriptionIntl.ja),
   };
 
@@ -53,6 +53,8 @@ function Bio({
         alt={bio.author}
         imgStyle={{
           borderRadius: '50%',
+          width: '50px',
+          height: '50px',
         }}
       />
       <p>
