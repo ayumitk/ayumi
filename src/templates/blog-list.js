@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/Layout';
 
-import { Container, BlogRollGrid } from '../styles/StyledComponents';
+import { Container, BlogRollGrid, PageTitle } from '../styles/StyledComponents';
 
 const Pagination = styled.ul`
   display:flex;
@@ -83,10 +83,10 @@ class BlogList extends Component {
 
     return (
       <Layout location={location} title={siteTitle}>
-        <div>
+        <>
           <SEO title={`Blog Page ${currentPage}`} />
           <Container>
-            <h1 style={{ padding: '5rem 0' }}>Blog</h1>
+            <PageTitle>Blog</PageTitle>
 
             <BlogRollGrid style={{ marginBottom: '5rem' }}>
               {posts.map(({ node }) => {
@@ -105,7 +105,7 @@ class BlogList extends Component {
                       </div>
                       <div className="blog-roll-grid__inner">
                         <h3>{title}</h3>
-                        <p>{date}</p>
+                        <p className="date">{date}</p>
                         <p>{description}</p>
                       </div>
                     </Link>
@@ -140,7 +140,7 @@ class BlogList extends Component {
             </Pagination>
 
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }

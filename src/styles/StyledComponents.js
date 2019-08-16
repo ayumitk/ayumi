@@ -88,17 +88,28 @@ const BlogRollGrid = styled.div`
   article{
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
     background: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover{
+      box-shadow: rgba(39, 44, 49, 0.2) 8px 14px 38px, rgba(39, 44, 49, 0.1) 1px 3px 8px;
+    }
     a{
       display:block;
-    }
-    h3{
-      margin-bottom: 0.5rem;
+      &:hover{
+        text-decoration: none;
+      }
     }
     p{
-      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      &.date{
+        color: ${props => props.theme.color.gray};
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
     }
     .blog-roll-grid__inner{
-      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      padding: 2rem 2rem 4rem 2rem;
     }
     .blog-roll-grid__image{
       line-height:0;
@@ -106,7 +117,14 @@ const BlogRollGrid = styled.div`
   }
 `;
 
+const PageTitle = styled.h1`
+  padding: 5rem 0;
+  @media (max-width: 565.98px) {
+    padding: 3rem 0;
+  }
+`;
+
 
 export {
-  Grid, Container, Input, Label, Textarea, Button, BlogRollGrid,
+  Grid, Container, Input, Label, Textarea, Button, BlogRollGrid, PageTitle,
 };

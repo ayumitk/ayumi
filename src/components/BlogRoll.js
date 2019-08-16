@@ -71,7 +71,7 @@ export default () => (
       query BlogRollQuery {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 4
+          limit: 6
           ) {
           edges {
             node {

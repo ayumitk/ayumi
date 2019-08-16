@@ -16,6 +16,16 @@ import '../styles/prism.scss';
 
 import TableOfContents from '../components/TableOfContents';
 
+const BlogTitle = styled.h1`
+  font-size: 4rem;
+  @media (max-width: 991.98px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 565.98px) {
+    font-size: 2.8rem;
+  }
+`;
+
 const Date = styled.p`
   text-align:center;
   color:${props => props.theme.color.pink};
@@ -202,7 +212,7 @@ class BlogPostTemplate extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO
             title={title}
             description={description || excerpt}
@@ -213,7 +223,7 @@ class BlogPostTemplate extends Component {
 
             <header style={{ marginBottom: '2rem' }}>
               <Date>{date}</Date>
-              <h1>{title}</h1>
+              <BlogTitle>{title}</BlogTitle>
               <Description>{description}</Description>
             </header>
 
@@ -259,7 +269,7 @@ class BlogPostTemplate extends Component {
             <DiscussionEmbed {...disqusConfig} />
 
           </BlogContainer>
-        </div>
+        </>
       </Layout>
     );
   }

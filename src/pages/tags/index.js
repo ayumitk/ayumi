@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 
-import { Container } from '../../styles/StyledComponents';
+import { Container, PageTitle } from '../../styles/StyledComponents';
 
 
 class TagsPage extends Component {
@@ -25,10 +25,10 @@ class TagsPage extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO title="Tags" lang={intl.locale} />
           <Container>
-            <h1 style={{ padding: '5rem 0' }}>Tags</h1>
+            <PageTitle>Tags</PageTitle>
             <ul>
               {group.map(tag => (
                 <li key={tag.fieldValue}>
@@ -39,7 +39,7 @@ class TagsPage extends Component {
               ))}
             </ul>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }

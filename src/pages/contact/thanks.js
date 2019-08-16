@@ -16,13 +16,13 @@ class Thanks extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO title="Thank You" lang={intl.locale} />
           <Container style={{ textAlign: 'center', paddingTop: '10rem' }}>
             <h1>Thank you!</h1>
             <p><FormattedMessage id="contact.thanks" /></p>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }

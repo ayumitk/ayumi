@@ -83,12 +83,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1{
-    font-size: 4rem;
+    font-size: 4.8rem;
     @media (max-width: 991.98px) {
-      font-size: 3rem;
+      font-size: 4.8rem;
     }
     @media (max-width: 565.98px) {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
     }
   }
 

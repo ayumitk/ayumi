@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 
 import {
-  Container, Input, Label, Textarea, Button,
+  Container, Input, Label, Textarea, Button, PageTitle,
 } from '../../styles/StyledComponents';
 
 function encode(data) {
@@ -47,10 +47,10 @@ class Index extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO title="Contact" lang={intl.locale} />
           <Container>
-            <h1 style={{ padding: '5rem 0' }}>Contact</h1>
+            <PageTitle>Contact</PageTitle>
             <form
               name="contact"
               method="post"
@@ -110,7 +110,7 @@ class Index extends Component {
 
             </form>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }

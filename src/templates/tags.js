@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 // import SEO from '../components/seo';
 
-import { Container, BlogRollGrid } from '../styles/StyledComponents';
+import { Container, BlogRollGrid, PageTitle } from '../styles/StyledComponents';
 
 class TagRoute extends Component {
   static propTypes = {
@@ -52,10 +52,10 @@ class TagRoute extends Component {
 
     return (
       <Layout location={location} title={siteTitle}>
-        <div>
+        <>
           {/* <SEO title={tagHeader} /> */}
           <Container>
-            <h1 style={{ padding: '5rem 0' }}>{tagHeader}</h1>
+            <PageTitle>{tagHeader}</PageTitle>
             <BlogRollGrid>
               {posts.map(({ node }) => {
                 const { slug } = node.fields;
@@ -83,7 +83,7 @@ class TagRoute extends Component {
             </BlogRollGrid>
             <Link to="/tags/">Browse all tags</Link>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }

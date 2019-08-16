@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 
-import { Container } from '../../styles/StyledComponents';
+import { Container, PageTitle } from '../../styles/StyledComponents';
 
 class AboutPage extends Component {
   static propTypes = {
@@ -16,13 +16,13 @@ class AboutPage extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO title="About Me" lang={intl.locale} />
           <Container>
-            <h1 style={{ padding: '5rem 0' }}>About Me</h1>
+            <PageTitle>About Me</PageTitle>
             <p>Under Construction</p>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }
