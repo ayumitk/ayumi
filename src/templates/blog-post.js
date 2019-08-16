@@ -9,6 +9,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Bio from '../components/Bio';
+import Share from '../components/Share';
 
 import { Container } from '../styles/StyledComponents';
 import '../styles/prism.scss';
@@ -155,8 +156,8 @@ class BlogPostTemplate extends Component {
     data: PropTypes.shape({
       site: PropTypes.shape({
         siteMetadata: PropTypes.shape({
-          title: PropTypes.string,
-          author: PropTypes.string,
+          siteUrl: PropTypes.string,
+          twitterUsername: PropTypes.string,
         }),
       }),
       markdownRemark: PropTypes.shape({
@@ -180,12 +181,14 @@ class BlogPostTemplate extends Component {
   }
 
   render() {
-    const { data, location } = this.props;
+    const { data } = this.props;
     const post = data.markdownRemark;
 
     const featuredImgFluid = post.frontmatter.featuredimage.childImageSharp.fluid;
 
-    const siteTitle = data.site.siteMetadata.title;
+    const { siteUrl } = data.site.siteMetadata;
+    const { twitterUsername } = data.site.siteMetadata;
+
     const { excerpt, html, tableOfContents } = post;
     const { slug } = post.fields;
     const {
@@ -198,7 +201,7 @@ class BlogPostTemplate extends Component {
     };
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <div>
           <SEO
             title={title}
@@ -229,6 +232,7 @@ class BlogPostTemplate extends Component {
 
             <footer style={{ margin: '5rem 0' }}>
               <TagList>
+                Tags :
                 {tags && tags.length ? (
                   <>
                     {tags.map(tag => (
@@ -237,9 +241,20 @@ class BlogPostTemplate extends Component {
                   </>
                 ) : null}
               </TagList>
-            </footer>
 
-            <Bio />
+              <Share
+                socialConfig={{
+                  twitterUsername,
+                  config: {
+                    url: `${siteUrl}${slug}`,
+                    title,
+                  },
+                }}
+                tags={tags}
+              />
+
+              <Bio />
+            </footer>
 
             <DiscussionEmbed {...disqusConfig} />
 
@@ -256,8 +271,8 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
-        author
+        siteUrl
+        twitterUsername
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
