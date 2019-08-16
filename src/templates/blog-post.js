@@ -110,6 +110,9 @@ const PostContentWrapper = styled.div`
     padding: 1.5rem 2rem;
     margin: 3rem 0 0 0;
     border-left: solid 3px ${props => props.theme.color.black};
+    @media (max-width: 565.98px) {
+      font-size: 1.4rem;
+    }
     p{
       margin:0;
     }
