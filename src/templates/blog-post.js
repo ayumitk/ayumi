@@ -25,8 +25,14 @@ const Date = styled.p`
 const BlogContainer = styled(Container)`
   max-width: 840px;
   padding-top:5rem;
+  @media (max-width: 565.98px) {
+    padding-top:2.5rem;
+  }
   h1{
     margin-bottom:3rem;
+    @media (max-width: 565.98px) {
+      padding-top:1rem;
+    }
   }
 `;
 
@@ -49,12 +55,18 @@ const PostContentWrapper = styled.div`
   }
   h2 {
     margin-bottom: 3rem;
-    padding-bottom: 1.5rem;
-    border-bottom: solid 1px ${props => props.theme.color.lightGray};
+    /* padding-bottom: 1.5rem; */
+    /* border-bottom: solid 1px ${props => props.theme.color.lightGray}; */
+    font-size: 3.2rem;
+    @media (max-width: 565.98px) {
+      font-size: 2.6rem;
+    }
   }
   h3 {
     /* color: ${props => props.theme.color.pink}; */
     margin-top: 6rem;
+    font-size: 2.2rem;
+    font-weight:600;
   }
   em{
     font-weight:700;
@@ -132,6 +144,12 @@ const TagList = styled.div`
   }
 `;
 
+const Description = styled.p`
+  @media (max-width: 565.98px) {
+    font-size: 1.6rem;
+  }
+`;
+
 class BlogPostTemplate extends Component {
   static propTypes = {
     data: PropTypes.shape({
@@ -193,7 +211,7 @@ class BlogPostTemplate extends Component {
             <header style={{ marginBottom: '2rem' }}>
               <Date>{date}</Date>
               <h1>{title}</h1>
-              <p>{description}</p>
+              <Description>{description}</Description>
             </header>
 
             <div style={{ lineHeight: '0' }}>

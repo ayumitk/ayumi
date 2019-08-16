@@ -4,18 +4,26 @@ import theme from './theme';
 const GlobalStyle = createGlobalStyle`
 
   @font-face {
-    font-family: "nsjp";
+    font-family: "NotoSansJP";
     font-style: normal;
     font-weight: 400;
-    src: url("/font/nsjpdl.woff") format("woff");
+    src: url("/font/NotoSansJP-DemiLight.woff") format("woff");
     font-display: swap;
   }
 
   @font-face {
-    font-family: "nsjp";
+    font-family: "NotoSansJP";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/font/NotoSansJP-Medium.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "NotoSansJP";
     font-style: normal;
     font-weight: 700;
-    src: url("/font/nsjpb.woff") format("woff");
+    src: url("/font/NotoSansJP-Bold.woff") format("woff");
     font-display: swap;
   }
 
@@ -51,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     color: #606060;
     /* font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "nsjp", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "nsjp", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSansJP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 400;
     background: #f8f8f8;
   }
@@ -71,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-weight: 700;
     color: ${theme.color.black};
-    font-family: 'Gilroy', "nsjp", sans-serif;
+    font-family: 'Gilroy', "NotoSansJP", sans-serif;
   }
 
   h1{
@@ -80,12 +88,15 @@ const GlobalStyle = createGlobalStyle`
       font-size: 3rem;
     }
     @media (max-width: 565.98px) {
-      font-size: 2rem;
+      font-size: 2.8rem;
     }
   }
 
   h2 {
-    font-size: 2.8rem;
+    font-size: 4rem;
+    @media (max-width: 565.98px) {
+      font-size: 3.4rem;
+    }
   }
   h3 {
     font-size: 2rem;

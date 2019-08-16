@@ -77,7 +77,7 @@ const BlogRollGrid = styled.div`
   grid-gap: 50px;
   grid-template-columns: 1fr 1fr 1fr;
   @media (max-width: 991.98px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   @media (max-width: 767.98px) {
     grid-template-columns: 1fr 1fr;

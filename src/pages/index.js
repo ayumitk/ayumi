@@ -9,12 +9,42 @@ import BlogRoll from '../components/BlogRoll';
 
 import { Container } from '../styles/StyledComponents';
 
+const Hero = styled(Container)`
+  text-align:center;
+  padding: 10rem 0;
+`;
+
+const Hello = styled.div`
+  font-size: 10rem;
+  line-height: 0.95;
+  margin-bottom: 3rem;
+  color: #ff5851;
+  letter-spacing: -0.25rem;
+  @media (max-width: 565.98px) {
+    font-size: 7.5rem;
+  }
+  span{
+    color:${props => props.theme.color.black};
+  }
+`;
+
+const Status = styled.div`
+  font-size: 3rem;
+  @media (max-width: 565.98px) {
+    font-size: 2.2rem;
+  }
+`;
+
 const SkillSet = styled.div`
-  display:flex;
-  margin-bottom: 7rem;
+  margin-bottom: 8rem;
+  @media (min-width: 768px) {
+    display:flex;
+  }
   > div{
-    width: 50%;
     display: flex;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
     > div{
       max-width:550px;
       text-align:center;
@@ -46,27 +76,25 @@ class IndexPage extends Component {
 
     return (
       <Layout>
-        <div>
+        <>
           <SEO title="Home" lang={intl.locale} />
-          <Container>
-            <h1 style={{ padding: '7rem 0', textAlign: 'center' }}>
-              <div style={{
-                fontSize: '10rem', lineHeight: '1', marginBottom: '2.5rem', color: '#ff5851', letterSpacing: '-0.25rem',
-              }}
-              >
-                Hello.
+          <Hero>
+            <h1>
+              <Hello>
+                Hello
+                <span>.</span>
                 <br />
                 I am Ayumi,
-              </div>
-              <div style={{ fontSize: '3rem' }}>
-                a UI/UX Designer & Developer
+              </Hello>
+              <Status>
+                UI/UX Designer & Developer
                 <br />
                 with 10+ years of experience
                 <br />
                 based in Vancouver, Canada.
-              </div>
+              </Status>
             </h1>
-          </Container>
+          </Hero>
           <SkillSet>
             <div style={{ background: '#ff5851', color: '#FFF' }}>
               <div style={{ marginLeft: 'auto' }}>
@@ -77,7 +105,7 @@ class IndexPage extends Component {
                 <p>Sketch, Photoshop, Illustrator, Adobe DX, Pen & Paper, Invision, Zeplin</p>
               </div>
             </div>
-            <div style={{ background: '#1c1b20', color: '#dcdcdc' }}>
+            <div style={{ background: '#1c1b20', color: '#ababab' }}>
               <div style={{ marginRight: 'auto' }}>
                 <h2 style={{ color: '#fff' }}>Front-end Dev</h2>
                 <h3 style={{ color: '#fff' }}>Languages I speak:</h3>
@@ -91,10 +119,10 @@ class IndexPage extends Component {
             <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Latest Tips</h2>
             <BlogRoll />
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-              <StyledLink to="/blog/">もっと見る</StyledLink>
+              <StyledLink to="/blog/">See More</StyledLink>
             </div>
           </Container>
-        </div>
+        </>
       </Layout>
     );
   }
