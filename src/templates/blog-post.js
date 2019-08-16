@@ -127,6 +127,13 @@ const PostContentWrapper = styled.div`
   pre > code {
     background: transparent;
     color: #cbccc6;
+    @media (max-width: 565.98px) {
+      font-size: 1.4rem;
+    }
+    a{
+      color: #cbccc6;
+      text-decoration: none;
+    }
   }
   .btn{
     display:block;
