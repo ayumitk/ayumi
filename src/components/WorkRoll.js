@@ -52,9 +52,9 @@ class WorkRoll extends Component {
               <img src={project.covers[404]} alt="project cover" />
               <p>{project.name}</p>
             </Link>
-            <ul style={{ fontSize: '1.6rem', display: 'flex' }}>
+            <ul style={{ fontSize: '1.4rem', display: 'flex' }}>
               {project.fields.map(field => (
-                <li key={field}>{field}</li>
+                <li key={field} style={{ marginRight: '0.5rem' }}>{field}</li>
               ))}
             </ul>
           </div>

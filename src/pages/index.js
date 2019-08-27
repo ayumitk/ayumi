@@ -119,12 +119,12 @@ class IndexPage extends Component {
           <Container>
             <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Blog</h2>
             <BlogRoll />
-            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <div style={{ textAlign: 'center', marginTop: '5rem', marginBottom: '15rem' }}>
               <StyledLink to="/blog/"><FormattedMessage id="read_more" /></StyledLink>
             </div>
             <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Work</h2>
             <WorkRoll />
-            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <div style={{ textAlign: 'center', marginTop: '5rem' }}>
               <StyledLink to="/work/"><FormattedMessage id="read_more" /></StyledLink>
             </div>
           </Container>
