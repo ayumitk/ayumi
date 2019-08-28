@@ -60,6 +60,7 @@ const cfg = {
     ],
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
