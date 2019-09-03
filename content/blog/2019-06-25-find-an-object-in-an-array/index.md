@@ -1,10 +1,10 @@
 ---
 templateKey: "blog-post"
-title: "JavaScriptで配列の中から、特定の要素を持つオブジェクトを探す"
+title: "JavaScriptで配列の中から特定の何かを探したい時"
 date: 2019-06-25T15:04:10.000Z
 featuredpost: false
 featuredimage: ./featuredimage.png
-description: 配列の中から何かを探し出す時のメソッドまとめ
+description: 配列の中から条件に合う要素を探したい時のメソッドまとめ（find/filter/findIndex/some）
 
 tags:
   - JavaScript
