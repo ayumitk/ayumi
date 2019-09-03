@@ -7,9 +7,7 @@ featuredimage: ./featuredimage.png
 description: Backblaze
 
 tags:
-  - JavaScript
-  - React
-  - GatsbyJS
+  - Backblaze
   - Tips
 ---
 

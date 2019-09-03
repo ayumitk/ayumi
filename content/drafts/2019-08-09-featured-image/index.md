@@ -8,7 +8,7 @@ description: 忘れないようにまとめ
 
 tags:
   - JavaScript
-  - Gatsby
+  - GatsbyJS
   - Tips
 ---
 
