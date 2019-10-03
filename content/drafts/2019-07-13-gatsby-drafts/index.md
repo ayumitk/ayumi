@@ -4,7 +4,7 @@ title: "Gatsby＋Netlifyのブログに下書き機能を追加したい"
 date: 2019-07-13T15:04:10.000Z
 featuredpost: false
 featuredimage: ./featuredimage.png
-description: Gatsbyのブログ記事を下書き保存し、デベロップメント環境では表示、プロダクション環境では非表示にしたい場合
+description: Gatsby製のブログで、記事を下書き保存し、デベロップメント環境では表示、プロダクション環境では非表示にしたい
 
 tags:
   - JavaScript
@@ -19,9 +19,9 @@ tags:
 
 ## やりたいこと 🤔
 
-- GitHub に push し、Netlify でデプロイしている Gatsby 製ブログ
-- 記事を「公開」と「下書き」に分ける
-- プロダクション環境でのみ「下書き」を非表示にしたい
+- 記事を「公開」と「下書き」に分けたい
+- GitHub に push し、Netlify でデプロイしてブログを公開したい
+- 「下書き」記事を、デベロップメント環境では表示、プロダクション環境は非表示にしたい
 
 こんな感じのイメージ。
 

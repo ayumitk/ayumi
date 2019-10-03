@@ -13,8 +13,16 @@ tags:
   - Tips
 ---
 
+## Client side
+
 .env ファイルに変数を書き込みたいけど、github リポジトリにはアップしたくない場合。  
 Netlify のデプロイセッティングで、直接変数を設定できます。
 
 - [Build Settings](https://www.netlify.com/docs/build-settings/)
 - [Environment Variables](https://www.netlify.com/docs/continuous-deployment/#environment-variables)
+
+## Server side
+
+Netlift function を使おう
+
+- [Netlify Lambda Functions Tutorial](https://flaviocopes.com/netlify-functions/)
